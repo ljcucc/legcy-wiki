@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to basic a first C program - note</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="body">
+        <h1 class="title">How to basic a first C program - note</h1>
+    
+    <blockquote>
+    <p>All Copyright (c) belongs to ljcucc 2021</p>
+    </blockquote>
+    <p>this guideline (or note) will focusing on “how to write C codes
+    to build a project”</p>
+    <p>在這個指南(同時也是我的筆記)中會有很多有關C的一些細節，如果你是因為老師在學校有教C，然後覺得C很好玩你很想要用C寫一些東西的人，這個guideline很歡迎你。為了幫助你學習，很多部分都用英文的，絕對不是因為我懶著切換輸入法。</p>
+    <h2 id="entry-of-the-journey">Entry of the journey</h2>
+    <p>這個筆記會很著重在如何脫離IDE，並且使用非IDE的環境開發。甚至推薦你直接使用terminal，完全脫離GUI。這對你來說是件好事，畢竟在這個過程中你會逐漸了解整個專案背後的原理和細節。</p>
+    <h2 id="pros-and-cons">Pros and Cons</h2>
+    <p>為什麼要用C寫programs和tools？</p>
+    <ol type="1">
+    <li>效率：和使用Golang和Rust一樣，使用C可以提高程式的效率，因為如果你的C是跑在原生的環境上，你不需要為那個python的VM多跑一層，浪費效率。在伺服器上每一行指令都是一個執行成本，多執行就是多成本。</li>
+    <li>CLI tools: 如果你是Terminal/TUI program的愛用者，那你一定知道CLI
+    tools的方便，如果你是個網頁前端的開發者，你一定會體會到有很多程式都是以CLI
+    tools的形式存在的。對大多數學校教的C programming來說，都是在撰寫CLI
+    program或TUI (Text-based user
+    interface)，相比GUI，TUI只需要在乎input和output就好了，大多數不用考慮GUI
+    Framworks、跟X
+    server的溝通，畫面的渲染、事件程式等等的問題，所以多數老師的教學或初學者在開始學習C時常常會從（或幾乎）用TUI作為開頭。</li>
+    <li>精簡：C是一個很精簡的程式語言，C當初的設計目的就是爲了越接近硬體，越精簡越好。
+    (待修正)</li>
+    </ol>
+    <blockquote>
+    <ul>
+    <li>TUI: Text-based User Interface</li>
+    <li>CLI: Command Line Interface</li>
+    </ul>
+    </blockquote>
+    <p>那用C寫有什麽缺點？</p>
+    <ol type="1">
+    <li>Pointer
+    讓記憶體的操作出現了危險性，最著名的例子就是scanf的security
+    issue。(待修正)</li>
+    <li>抽象程度不高、不支援語言内 OOP
+    物件導向。但你可以用struct加functions來實作OOP架構。</li>
+    </ol>
+    <h3 id="用純c寫例子">用純C寫例子</h3>
+    <p>總和以上兩點，如果你用C寫出來的程式可以是非常輕量的（在檔案大小和對算力的需求下），所以對low-end
+    device 非常的友善，例如：</p>
+    <ul>
+    <li><a href="https://suckless.org">suckless software</a>:
+    suckless一直想要達成的理念，所以suckless的無論是DWM (Dynamic Window
+    Manager)還是ST(Terminal)都是用純C寫的，甚至要變更config需要到source
+    code裡改完,非常的suckless風。</li>
+    <li>100r.co: 100r是一個兩人組成的小團隊，主要致力於開發low-end
+    device的新型態應用程式，他們的網站初期版本就是用C生成的（現在則是用TAL，一種強形態組合語言）</li>
+    </ul>
+    <h2 id="recommended-sites">Recommended Sites</h2>
+    <ul>
+    <li><a href="https://www.bottomupcs.com">Computer Science from the
+    Bottom Up</a>: This website is focusing on most computer science
+    topic, but not really talk about details that how to wirte codes or
+    develop of a project.</li>
+    <li>https://users.ece.cmu.edu/~eno/coding/CCodingStandard.html
+    Coding Standards of C ( and C++ within another webpage)</li>
+    <li>你所不知道的C語言（系列講座）：https://hackmd.io/<span
+    class="citation"
+    data-cites="sysprog/c-programming">@sysprog/c-programming</span></li>
+    </ul>
+    <h3 id="recommended-posts-and-articles">Recommended Posts and
+    Articles</h3>
+    <ul>
+    <li>how to write GUI application in C programming language, powered
+    by RaspberryPi.org :
+    https://magpi.raspberrypi.com/books/c-gui-programming</li>
+    <li>Input / Output (輸入輸出): <span class="citation"
+    data-cites="combo-tw/r19DJIRBr">[https://hackmd.io/@combo-tw/r19DJIRBr]</span></li>
+    <li>gotop 的 21st Century C, 2nd Edition
+    中文版試讀（前言）：http://epaper.gotop.com.tw/PDFSample/A595.pdf</li>
+    </ul>
+    <h3 id="延申閲讀">延申閲讀</h3>
+    <ul>
+    <li>Golang 深入淺出：https://hackmd.io/<span class="citation"
+    data-cites="ljcucc/golang">@ljcucc/golang</span></li>
+    </ul>
+  </div>
+</body>
+
+</html>
