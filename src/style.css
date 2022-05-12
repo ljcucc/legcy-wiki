@@ -7,7 +7,7 @@ html{
   background: rgb(255, 253, 250);
 }
 
-::selection {
+*::selection {
   color: white;
   background: black;
 }
@@ -108,4 +108,20 @@ iframe, img{
 
 ul.title{
   margin-top: 16px !important;
+}
+
+pre{
+  font-size: 16px !important;
+  padding: 16px;
+  background-color: black;
+  color: white;
+}
+
+code{
+  font-family: monospace !important;
+}
+
+code::selection{
+  background-color: white !important;
+  color: black !important;
 }

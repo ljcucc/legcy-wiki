@@ -50,3 +50,26 @@ this guideline (or note) will focusing on "how to write C codes to build a proje
 ### 延申閲讀
 
 * Golang 深入淺出：https://hackmd.io/@ljcucc/golang
+
+# Main program
+
+this is a main program without any arguments:
+
+```c=
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+  // your code here...
+  return 0;
+}
+```
+
+you may see some codes will written like this:
+
+```c=
+int main(void){
+  // something in your main function...
+  exit(0);
+}
+```
