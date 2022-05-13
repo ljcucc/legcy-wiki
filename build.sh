@@ -10,3 +10,4 @@ done
 
 cp ./src/index.html ./docs/
 cp ./src/style.css ./docs/
+cp  -rf ./assets ./docs/
