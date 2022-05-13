@@ -2,7 +2,7 @@
 title: 用抽象語言建構世界
 ...
 
-~~接下來的筆記有很大一部分都會引用一本叫做 「Introduction to Mathematical thinking」，中文叫做「這個問題，你用數學方式想過嗎？」的一本書，書中介紹了很多Formal Language的使用方式、概念和定義，非常推薦買一本或者通靈看看。~~
+> 接下來的筆記有很大一部分都會引用一本叫做 「Introduction to Mathematical thinking」，中文叫做「這個問題，你用數學方式想過嗎？」的一本書，書中介紹了很多Formal Language的使用方式、概念和定義，非常推薦買一本或者通靈看看。
 
 在閱讀完 [[想法表達、保存的前世今身]] 後，我們初步認識了一個可以把知識壓縮並且重複利用的概念。也就是，我們就可以透過這個強大的力量去描述我們身處的宇宙。同時，是否我們也可以反過來，利用這個強大的力量去建構一個世界或宇宙 ? 例如 [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life)...
 
