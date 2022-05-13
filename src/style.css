@@ -136,12 +136,20 @@ iframe.custom{
   /* outline-offset: -2px; */
 }
 
-figure>embed,figcaption{
+figure{
+  margin:0;
+}
+
+figcaption{
+  display: none;
+}
+
+/* figure>embed,figcaption{
   display: none;
 }
 figure::after{
   content: "[embed is not allow to display]";
-}
+} */
 
 h1.title{
   margin-bottom: 30px !important;

@@ -24,6 +24,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ![](./assets/default-header.blue.png)
 
+or a gif
+
+![FluffyVenom](https://64.media.tumblr.com/f8cb316fa42c97eca0b3886d389888fa/d25e6acfc8b27918-c1/s640x960/b68d9c8852c6c063876df14a5f13c73ebdec77ed.gif)
+
 you can put text here for display, and `border-radius` will applied.
 
 ```
@@ -32,4 +36,4 @@ you can put text here for display, and `border-radius` will applied.
 
 or a embeded Youtube video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aLjplzWDGp8?start=36" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f3IQSmKFokU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
