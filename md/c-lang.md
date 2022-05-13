@@ -2,11 +2,15 @@
 title: How to basic a C program
 ...
 
-> All Copyright (c) belongs to ljcucc 2021
 
 this guideline (or note) will focusing on "how to write C codes to build a project"
 
+
 在這個指南(同時也是我的筆記)中會有很多有關C的一些細節，如果你是因為老師在學校有教C，然後覺得C很好玩你很想要用C寫一些東西的人，這個guideline很歡迎你。為了幫助你學習，很多部分都用英文的，絕對不是因為我懶著切換輸入法。
+
+> 這個頁面尚未完成編輯！
+
+> All Copyright (c) belongs to ljcu.cc since 2021
 
 ## Entry of the journey
 

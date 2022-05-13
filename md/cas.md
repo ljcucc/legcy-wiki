@@ -2,6 +2,8 @@
 title: Computer Algebra System (CAS) 
 ...
 
+> 這個頁面尚未完成編輯！
+
 ## Computer Algebra System (CAS) 是一個以代數為基礎的運算系統
 
 ### Algebrite (JavaScript)
@@ -22,4 +24,6 @@ the result will be
 
 > \> `2*x`
 
-or using the offical sandbox webpage for testing ideas: [Algebrite Sandbox](http://algebrite.org/sandboxes/latest-stable/sandbox.html)
+or using the offical sandbox webpage for testing ideas: 
+
+<iframe class="custom" style="padding: 16px;" height="400" src="http://algebrite.org/sandboxes/latest-stable/sandbox.html"></iframe>
