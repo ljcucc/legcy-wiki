@@ -179,8 +179,11 @@ pre::-webkit-scrollbar-thumb{
   width: 5px;
 }
 
-pre>code{
+code{
   font-family: 'Roboto Mono', monospace !important;
+}
+
+pre>code{
   width: 100%;
 }
 
