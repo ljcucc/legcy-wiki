@@ -9,5 +9,11 @@ for file in ./md/*; do
 done
 
 cp ./src/index.html ./docs/
+
+echo $(python3 - << EOF
+print("""$(cat ./docs/index.html)""".replace("\$toc\$","""$(./bin/generate_menu.sh)"""))
+EOF
+) > ./docs/index.html
+
 cp ./src/style.css ./docs/
 cp  -rf ./assets ./docs/
