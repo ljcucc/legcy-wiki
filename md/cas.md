@@ -24,6 +24,4 @@ the result will be
 
 > \> `2*x`
 
-or using the offical sandbox webpage for testing ideas: 
-
-<iframe class="custom" style="padding: 16px;" height="400" src="http://algebrite.org/sandboxes/latest-stable/sandbox.html"></iframe>
+or using the offical sandbox webpage for testing ideas: http://algebrite.org/sandboxes/latest-stable/sandbox.html
