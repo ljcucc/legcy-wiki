@@ -146,17 +146,26 @@ pre{
   background-color: black;
   color: white;
   border-radius: 10px;
-  overflow-x: scroll;
+  overflow-x: auto;
   box-sizing: border-box;
   width: 100%;
 }
 
-code{
+pre::-webkit-scrollbar{
+  background:transparent;
+}
+
+pre::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,0.55);
+  width: 5px;
+}
+
+pre>code{
   font-family: 'Roboto Mono', monospace !important;
   width: 100%;
 }
 
-code::selection{
+pre>code::selection{
   background-color: white !important;
   color: black !important;
 }
