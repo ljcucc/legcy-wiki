@@ -1,5 +1,5 @@
 ---
-title: How to basic a first C program - note
+title: How to basic a C program - note
 ...
 
 > All Copyright (c) belongs to ljcucc 2021
