@@ -1,1 +1,1 @@
-nodemon --watch "./" --exec "./build.sh" -e html,css --ignore ./docs
+nodemon --watch "./src" --watch "./md" --exec "./build.sh" -e html,css --ignore ./docs
