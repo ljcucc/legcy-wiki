@@ -2,11 +2,13 @@
 
 echo '$meta-json$' > /tmp/metadata.pandoc-tpl
 for file in ./md/*; do
-  title=$(python3 - << EOF
+  echo $(python3 - << EOF
 import json
-print($(pandoc --template=/tmp/metadata.pandoc-tpl $file)["title"])
+metadata = $(pandoc --template=/tmp/metadata.pandoc-tpl $file)
+if ("public" in metadata and metadata["public"] == "true"):
+  title = metadata["title"]
+  filename = "$(basename $file)".replace(".md", ".html")
+  print(f'<li><a href=\"{filename}\">{title}</a></li>')
 EOF
-  )
-  filename=$(basename $file)
-  echo "<li><a href=\"./${filename/.md/.html}\">$title</a></li>"
+)
 done
