@@ -1,5 +1,6 @@
 ---
 title: My Setups
+public: "true"
 ...
 
 ### Hardware
