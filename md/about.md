@@ -1,6 +1,5 @@
 ---
 title: About
-public: "true"
 ...
 有關 wwwiki
 
