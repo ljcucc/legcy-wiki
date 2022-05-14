@@ -1,5 +1,6 @@
 ---
 title: 用抽象語言建構世界
+public: "true"
 ...
 
 > 接下來的筆記有很大一部分都會引用一本叫做 「Introduction to Mathematical thinking」，中文叫做「這個問題，你用數學方式想過嗎？」的一本書，書中介紹了很多Formal Language的使用方式、概念和定義，非常推薦買一本或者通靈看看。
