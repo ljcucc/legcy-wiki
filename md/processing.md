@@ -8,7 +8,13 @@ public: "true"
 
 different of Creative Coding is to create something expressive instead of something functional. ( [Wikipedia](https://en.wikipedia.org/wiki/Creative_coding){target="blank"} )
 
-sometimes Creative Coding offen combine with Code Golf. like one of the example down below and the #creativecoding s on twitter.
+### #つぶやきProcessing
+
+spell as Tsu bu ya ki.
+
+'つぶやきProcessing is a challenge that creates art with Processing under one tweet text length limitation' -- by the founder of '#つぶやきProcessing', @Hau_kun.
+
+> More about :point_right: [#つぶやきProcessing](https://www.deconbatch.com/2020/01/what-is-processing.html)
 
 ### Processing is an IDE or library for artist, student and more
 
