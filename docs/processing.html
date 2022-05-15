@@ -17,60 +17,72 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="topbar">
-    <a class="title" href="index.html">wwwiki - ljcu.cc</a>
-  </div>
+  <div class="toc">
+      </div>
+
   <div class="body">
-        <img class="header-img" src="assets/default-header.png" alt="default header"/>
-    <h1 class="title">Creative Coding with Processing</h1>
-    
-    <h3
-    id="the-goal-of-creative-coding-is-creating-an-expressive-coding-usually-as-form-as-visual-art-design-motion-or-games-or-mixing-with-music">The
-    goal of Creative Coding is creating an expressive coding, usually as
-    form as visual, art, design, motion, or games (or mixing with
-    music)</h3>
-    <p>different of Creative Coding is to create something expressive
-    instead of something functional. ( <a
-    href="https://en.wikipedia.org/wiki/Creative_coding"
-    target="blank">Wikipedia</a> )</p>
-    <p>sometimes Creative Coding offen combine with Code Golf. like one
-    of the example down below and the #creativecoding s on twitter.</p>
-    <h3
-    id="processing-is-an-ide-or-library-for-artist-student-and-more">Processing
-    is an IDE or library for artist, student and more</h3>
-    <p>Processing originally developed and use Java as programming
-    language, today it have different variants, and JavaScript one is
-    the most easy accessible version of it called <code>p5.js</code></p>
-    <h3 id="p5.js">p5.js</h3>
-    <p>Get web IDE on <a href="https://editor.p5js.org"
-    class="uri">https://editor.p5js.org</a>, because p5.js is completely
-    run on you browser, so you can directly import library to your web
-    page (<a href="https://cdnjs.com/libraries/p5.js"
-    class="uri">https://cdnjs.com/libraries/p5.js</a>).</p>
-    <pre><code>&lt;!-- import p5js library --&gt;
+    <div class="topbar">
+      <a class="title" href="index.html">wwwiki - ljcu.cc</a>
+    </div>
+  
+    <div class="content">
+            <img class="header-img" src="assets/default-header.png" alt="default header" />
+      <h1 class="title">Creative Coding with Processing</h1>
+        
+  
+      <h3
+      id="the-goal-of-creative-coding-is-creating-an-expressive-coding-usually-as-form-as-visual-art-design-motion-or-games-or-mixing-with-music">The
+      goal of Creative Coding is creating an expressive coding, usually
+      as form as visual, art, design, motion, or games (or mixing with
+      music)</h3>
+      <p>different of Creative Coding is to create something expressive
+      instead of something functional. ( <a
+      href="https://en.wikipedia.org/wiki/Creative_coding"
+      target="blank">Wikipedia</a> )</p>
+      <p>sometimes Creative Coding offen combine with Code Golf. like
+      one of the example down below and the #creativecoding s on
+      twitter.</p>
+      <h3
+      id="processing-is-an-ide-or-library-for-artist-student-and-more">Processing
+      is an IDE or library for artist, student and more</h3>
+      <p>Processing originally developed and use Java as programming
+      language, today it have different variants, and JavaScript one is
+      the most easy accessible version of it called
+      <code>p5.js</code></p>
+      <h3 id="p5.js">p5.js</h3>
+      <p>Get web IDE on <a href="https://editor.p5js.org"
+      class="uri">https://editor.p5js.org</a>, because p5.js is
+      completely run on you browser, so you can directly import library
+      to your web page (<a href="https://cdnjs.com/libraries/p5.js"
+      class="uri">https://cdnjs.com/libraries/p5.js</a>).</p>
+      <pre><code>&lt;!-- import p5js library --&gt;
 &lt;script src=&quot;./p5js.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-    <p>the main program should be declared at the root (if you want your
-    ):</p>
-    <pre><code>function setup(){
+      <p>the main program should be declared at the root (if you want
+      your ):</p>
+      <pre><code>function setup(){
   // setup() will run before draw() and only run once
 }
 
 function draw(){
   // draw() will run forever
 }</code></pre>
-    <blockquote>
-    <p>you can get all function references from official website: <a
-    href="https://p5js.org/reference/">p5js.org/reference</a></p>
-    </blockquote>
-    <p>You can also simplify the code like this, some of the artist will
-    tweet thier code like this too to fit the word count limit:</p>
-    <pre><code>t=0;a=10;draw(_)=&gt;{t++||/*your code here*/}</code></pre>
-    <p>here’s an example of how:</p>
-    <pre><code>t=0;r=0.1;g=10;l=10;
+      <blockquote>
+      <p>you can get all function references from official website: <a
+      href="https://p5js.org/reference/">p5js.org/reference</a></p>
+      </blockquote>
+      <p>You can also simplify the code like this, some of the artist
+      will tweet thier code like this too to fit the word count
+      limit:</p>
+      <pre><code>t=0;a=10;draw(_)=&gt;{t++||/*your code here*/}</code></pre>
+      <p>here’s an example of how:</p>
+      <pre><code>t=0;r=0.1;g=10;l=10;
 draw=(_)=&gt;{t++||createCanvas(w=400, w);background(255);
 for(var i = 0; i &lt; Math.round(width/g); i++){
 strokeWeight(l-(abs(mouseX-i*g,2))*(r));line(i*g, 0, i*g, height)}}</code></pre>
+    </div>
   </div>
+  
+  
 </body>
 
 </html>

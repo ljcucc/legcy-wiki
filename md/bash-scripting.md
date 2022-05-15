@@ -1,6 +1,6 @@
 ---
 title: Bash Scripting
-public: "true"
+public: true
 ...
 
 用 bash scripting 發揮你的最大效率

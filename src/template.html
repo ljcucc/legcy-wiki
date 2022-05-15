@@ -17,17 +17,29 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="topbar">
-    <a class="title" href="index.html">wwwiki - ljcu.cc</a>
-  </div>
-  <div class="body">
-    $if(title)$
-    <img class="header-img" src="assets/default-header.png" alt="default header"/>
-    <h1 class="title">$title$</h1>
+  <div class="toc">
+    $if(toc)$
+    $toc$
     $endif$
-
-    $body$
   </div>
+
+  <div class="body">
+    <div class="topbar">
+      <a class="title" href="index.html">wwwiki - ljcu.cc</a>
+    </div>
+  
+    <div class="content">
+      $if(title)$
+      <img class="header-img" src="assets/default-header.png" alt="default header" />
+      <h1 class="title">$title$</h1>
+      $endif$
+  
+  
+      $body$
+    </div>
+  </div>
+  
+  
 </body>
 
 </html>

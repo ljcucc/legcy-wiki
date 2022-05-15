@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Public my server from a private
+network">
+
+  <meta property="og:site_name" content="wwwiki - ljcu.cc">
+  <meta property="og:title" content="Public my server from a private
+network" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" itemprop="image" content="./assets/default-header.png">
+  <meta property="og:type" content="website" />
+
+  <title>Public my server from a private network</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="toc">
+      </div>
+
+  <div class="body">
+    <div class="topbar">
+      <a class="title" href="index.html">wwwiki - ljcu.cc</a>
+    </div>
+  
+    <div class="content">
+            <img class="header-img" src="assets/default-header.png" alt="default header" />
+      <h1 class="title">Public my server from a private network</h1>
+        
+  
+      <blockquote>
+      <p>這實際上是一片筆記，會針對我的情況進行紀錄</p>
+      </blockquote>
+      <h2
+      id="我的server是處在防火牆保護的network且我無法更改其設定也就是說我無法修改-port-forwarding在社區網路可能會出現一樣的情況">我的server是處在防火牆保護的network，且我無法更改其設定（也就是說我無法修改
+      port forwarding），在社區網路可能會出現一樣的情況</h2>
+      <p>在這種情況下，我選擇的方案是「利用有一個公開 IP
+      的代理伺服器與處於 Private network 的 server
+      溝通」，在這種情況下有幾種選項</p>
+      <ul>
+      <li>使用現有
+      Tunneling：你可以設定哪個port要forward到伺服器的哪個port，例如
+      Cloudflare - Zero Trust 的 Tunneling、ngrok（我原本使用的）</li>
+      <li>使用 SSH
+      Tunneling：你可以設定哪個port要forward到伺服器的哪個port，非常的實用，而且通訊有SSH加密，但是只能TCP（其實可以，<a
+      href="https://superuser.com/questions/53103/udp-traffic-through-ssh-tunnel">這裡有解決方案</a>）</li>
+      <li>使用 VPN （例如 FOSS 的 OpenVPN）：無需任何 端口設定</li>
+      </ul>
+      <blockquote>
+      <p>請注意，所有中繼伺服器的方案，都會產生兩倍的傳輸數據。</p>
+      </blockquote>
+      <h1 id="ssh-tunneling">SSH Tunneling</h1>
+      <p>任何 client 只要有裝 SSH 都可以使用</p>
+      <h3 id="local-forwarding---把自己的-server-forward-到-host">Local
+      Forwarding - 把自己的 server forward 到 host</h3>
+      <pre><code>ssh -L [host-bind_address:]&lt;my-port&gt;:&lt;my-host&gt;:&lt;host-port&gt; &lt;SSH Server&gt;</code></pre>
+      <p>例如 我想要把我 local 的 8088 公開到 public server 的 80:</p>
+      <pre><code>ssh -L 0.0.0.0:8088:localhost:80 admin@ljcu.cc</code></pre>
+      <h3
+      id="remote-forwarding---把-server-的-port-forward-到我的電腦">Remote
+      Forwarding - 把 server 的 port forward 到我的電腦</h3>
+      <pre><code>ssh -R [bind_address:]&lt;port&gt;:&lt;host&gt;:&lt;host_port&gt; &lt;SSH Server&gt;</code></pre>
+      <p>例如 我想要把 host server 的 8088 拉到我的 8080 可以使用：</p>
+      <pre><code>ssh -R 0.0.0.0:8088:localhost:8080 admin@ljcu.cc</code></pre>
+      <h3 id="dynamic-port-forwarding---建立一個本地代理伺服器">Dynamic
+      Port Forwarding - 建立一個本地代理伺服器</h3>
+      <p>example:</p>
+      <pre><code>ssh -D [proxy-server-port] admin@ljcu.cc</code></pre>
+      <blockquote>
+      <p>更詳細的詳解可以參考：<a
+      href="https://johnliu55.tw/ssh-tunnel.html"
+      class="uri">https://johnliu55.tw/ssh-tunnel.html</a></p>
+      </blockquote>
+      <h1 id="vpn">VPN</h1>
+      <p>使用 VPN 的好處就是可以無需轉介任何 port，在這裡使用
+      OpenVPN當作例子。</p>
+      <h3 id="client-side">Client side</h3>
+      <p>沒有 public IP 的那個，例如我的 Raspberry pi。</p>
+      <p>安裝 OpenVPN：</p>
+      <pre><code>curl -L https://install.pivpn.io | bash</code></pre>
+      <pre><code>sudo apt-get install openvpn</code></pre>
+      <blockquote>
+      <p>為 Raspberry pi 快速設定 OpenVPN Client： <a
+      href="https://pivpn.io/" target="blank">https://pivpn.io/</a> 、
+      然後按照<a
+      href="https://thesecmaster.com/how-to-set-up-open-vpn-on-raspberry-pi/">步驟</a>
+      完成。</p>
+      </blockquote>
+      <h3 id="server-side">Server side</h3>
+      <p>有 public IP 的那個</p>
+    </div>
+  </div>
+  
+  
+</body>
+
+</html>
