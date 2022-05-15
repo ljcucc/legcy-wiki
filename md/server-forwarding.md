@@ -1,5 +1,5 @@
 ---
-title: Public my server from a private network
+title: Server Forwarding
 public: true
 ...
 
