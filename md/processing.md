@@ -43,7 +43,7 @@ function draw(){
 
 > you can get all function references from official website: [p5js.org/reference](https://p5js.org/reference/)
 
-You can also simplify the code like this, some of the artist will tweet thier code like this too to fit the word count limit:
+You can also simplify the code like this, as the form of #つぶやきProcessing :
 
 ```
 t=0;a=10;draw(_)=>{t++||/*your code here*/}
