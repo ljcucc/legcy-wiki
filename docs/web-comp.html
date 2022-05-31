@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Web Component &amp; Lit">
+
+  <meta property="og:site_name" content="wwwiki - ljcu.cc">
+  <meta property="og:title" content="Web Component &amp; Lit" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" itemprop="image" content="./assets/default-header.png">
+  <meta property="og:type" content="website" />
+
+  <title>Web Component &amp; Lit</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <div class="toc">
+      </div>
+
+  <div class="body">
+    <div class="topbar">
+      <a class="title" href="index.html">wwwiki - ljcu.cc</a>
+    </div>
+  
+    <div class="content">
+            <img class="header-img" src="assets/default-header.png" alt="default header" />
+      <h1 class="title">Web Component &amp; Lit</h1>
+        
+  
+      <h3
+      id="web-component-是一個新-web-的標準web-component是網頁絕對原生支援的可移植的解決方案">Web
+      component 是一個新 web 的標準，Web
+      component是網頁絕對原生支援的可移植的解決方案</h3>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/xCeutzpRlzA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+      <p>你有嘗試模組化你的網頁部件嗎？例如 Topbar、A login form of
+      dialog、A chart or something, and why it’s so hard to
+      modularization a website, for exmpale you need to build the bones
+      up the project in a framework like Vue, Angular or something? So
+      that’s why Web Comp got invented.</p>
+      <p>From now on, you can build your website by using components
+      without dealing with Frameworks, instead, browser do all the work
+      for you. and because of that (running natively) you can even cross
+      framework if you using web component, or if a component that built
+      in framework was implemented by using web comp, which can be reuse
+      with-in other framework (or without frameowrk).</p>
+      <blockquote>
+      <p>詳細可參考 <a
+      href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">MDN
+      官方文件</a></p>
+      </blockquote>
+      <p>現在已經有80%以上的瀏覽器支援了，如果不支援也可以使用 Polyfill
+      支援 Legacy browsers。比起Vue、Angular等Framework，Web Comp
+      相容於所有Framework。</p>
+      <h3 id="quick-started">Quick Started</h3>
+      <p>在這裡我使用 Lit 函式庫做示範, 下是一個顯示Material icon的 Web
+      Comp：</p>
+      <pre><code>import {LitElement, html, css} from &#39;https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js&#39;;
+
+class Icons extends LitElement{
+  static properties = {
+    name: {type: String}
+  };
+
+  constructor(){
+    super();
+    this.name = &quot;&quot;; // default value
+  }
+
+  render(){
+    return html`
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;
+      &lt;i class=&quot;material-icons&quot;&gt;${this.name}&lt;/i&gt;
+    `;
+  }
+}
+
+customElements.define(&quot;material-icons&quot;, Icons);</code></pre>
+      <p>你可以把這段 JS 當作 script tag
+      import，之後就可以直接使用它了⋯⋯ 就像這樣：</p>
+      <pre><code>&lt;script type=&quot;module&quot; src=&quot;./icon.js&quot;&gt;
+
+...
+
+&lt;material-icons name=&quot;menu&quot;&gt;&lt;/material-icons&gt;</code></pre>
+      <p>你甚至可以在 Vue、React 裡面使用它。</p>
+      <h3 id="how-it-works">How it works</h3>
+      <p>為了因應多變的可能情況，Web Comp 基本上分為3個主要元件：</p>
+      <ul>
+      <li>Custom elements：用於定義 Web Comp，讓 Web Comp 可以原生使用於
+      HTML</li>
+      <li>Shadow DOM：用於保護 Web Comp 範圍內的 styling</li>
+      <li>HTML templates：在 HTML 中定義 Web Comp 的模板</li>
+      </ul>
+      <h3 id="custom-elements-html-templates">Custom elements &amp; HTML
+      templates</h3>
+      <p>HTML:</p>
+      <pre><code>&lt;!-- define your template for custom element --&gt;
+
+&lt;template id=&quot;my-paragraph&quot;&gt;
+  &lt;style&gt;
+    p {
+      color: white;
+      background-color: black;
+      padding: 5px;
+      border-radius: 10px;
+    }
+  &lt;/style&gt;
+  &lt;p&gt;Hello World&lt;/p&gt;
+&lt;/template&gt;</code></pre>
+      <p>JavaScript:</p>
+      <pre><code>class MyElement extends HTMLElement{
+  constructor() {
+    super();
+    const template = document.getElementById(&#39;my-paragraph&#39;); // get element of template
+    const templateContent = template.content;                 // get content of template
+
+    this.attachShadow({mode: &#39;open&#39;}).appendChild(            // turn on shadow root for protection
+      templateContent.cloneNode(true);                        // create copy of template
+    );
+  }
+}
+
+customElements.define(&#39;my-paragraph&#39;, MyElement);             // define the custom element</code></pre>
+      <p>usage:</p>
+      <pre><code>&lt;my-paragraph&gt;&lt;/my-paragraph&gt;</code></pre>
+      <blockquote>
+      <p>ref: <a
+      href="https://github.com/mdn/web-components-examples/blob/main/simple-template/main.js"
+      class="uri">https://github.com/mdn/web-components-examples/blob/main/simple-template/main.js</a></p>
+      </blockquote>
+    </div>
+  </div>
+    <!-- image display dialog -->
+  <dialog modal-mode="mega">
+    <img id="disp-img" src="" alt="">
+    <form method="dialog">
+      <button class="menu-button" value="cancel">
+        <i class="material-icons">close</i>
+      </button>
+    </form>
+  </dialog>
+  
+</body>
+<script>
+  window.addEventListener("load", e=>{
+    document.querySelectorAll("img").forEach(item => item.addEventListener("click", e => {
+      console.log();
+      let dialog = document.querySelector("dialog");
+      document.querySelector("#disp-img").setAttribute("src", e.srcElement.getAttribute("src"));
+      dialog.showModal();
+    }));
+  });
+</script>
+
+</html>
