@@ -15,6 +15,8 @@
 
   <title>Bash Scripting</title>
   <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
   <div class="toc">
@@ -84,8 +86,26 @@ $ touch my_script.sh
 $ vim my_script.sh</code></pre>
     </div>
   </div>
-  
+    <!-- image display dialog -->
+  <dialog modal-mode="mega">
+    <img id="disp-img" src="" alt="">
+    <form method="dialog">
+      <button class="menu-button" value="cancel">
+        <i class="material-icons">close</i>
+      </button>
+    </form>
+  </dialog>
   
 </body>
+<script>
+  window.addEventListener("load", e=>{
+    document.querySelectorAll("img").forEach(item => item.addEventListener("click", e => {
+      console.log();
+      let dialog = document.querySelector("dialog");
+      document.querySelector("#disp-img").setAttribute("src", e.srcElement.getAttribute("src"));
+      dialog.showModal();
+    }));
+  });
+</script>
 
 </html>

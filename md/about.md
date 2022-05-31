@@ -8,7 +8,7 @@ public: "true"
 
 你目前看到的所有網頁都是透過我自己配置的toolchain所生成的：[knowledge-base](https://github.com/ljcucc/knowledge-base){target="blank"}，所有資料頁都由 markdown 所編寫，再由 pandoc 轉換為你現在看到的 html。[這是這一頁的原稿](https://raw.githubusercontent.com/ljcucc/knowledge-base/main/md/about.md)。
 
-這個網站的所有 toolchain 和 最終生成結果都希望走向 tool-less 和 目的具體的 為目的發展，這就是為什麼我拋棄選擇使用 Nuxt 生成的原因，功能單一的工具遲早都有可以取代的一天，開始不使用功能複雜化的工具可以不被工具綁架、被工具限制發展空間（但相對應的也會付出相對的成本，就看你要不要）。
+~~這個網站的所有 toolchain 和 最終生成結果都希望走向 tool-less 和 目的具體的 為目的發展，這就是為什麼我拋棄選擇使用 Nuxt 生成的原因，功能單一的工具遲早都有可以取代的一天，開始不使用功能複雜化的工具可以不被工具綁架、被工具限制發展空間（但相對應的也會付出相對的成本，就看你要不要）。~~
 
 > 逐漸變成數位甘地：https://youtu.be/XiR8QoU7vlU?t=345
 

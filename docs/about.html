@@ -15,6 +15,8 @@
 
   <title>About</title>
   <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
   <div class="toc">
@@ -40,9 +42,10 @@
       target="blank">knowledge-base</a>，所有資料頁都由 markdown
       所編寫，再由 pandoc 轉換為你現在看到的 html。<a
       href="https://raw.githubusercontent.com/ljcucc/knowledge-base/main/md/about.md">這是這一頁的原稿</a>。</p>
-      <p>這個網站的所有 toolchain 和 最終生成結果都希望走向 tool-less 和
-      目的具體的 為目的發展，這就是為什麼我拋棄選擇使用 Nuxt
-      生成的原因，功能單一的工具遲早都有可以取代的一天，開始不使用功能複雜化的工具可以不被工具綁架、被工具限制發展空間（但相對應的也會付出相對的成本，就看你要不要）。</p>
+      <p><del>這個網站的所有 toolchain 和 最終生成結果都希望走向
+      tool-less 和 目的具體的 為目的發展，這就是為什麼我拋棄選擇使用
+      Nuxt
+      生成的原因，功能單一的工具遲早都有可以取代的一天，開始不使用功能複雜化的工具可以不被工具綁架、被工具限制發展空間（但相對應的也會付出相對的成本，就看你要不要）。</del></p>
       <blockquote>
       <p>逐漸變成數位甘地：<a href="https://youtu.be/XiR8QoU7vlU?t=345"
       class="uri">https://youtu.be/XiR8QoU7vlU?t=345</a></p>
@@ -67,8 +70,26 @@
       href="mailto:report@ljcu.cc" class="email">report@ljcu.cc</a></p>
     </div>
   </div>
-  
+    <!-- image display dialog -->
+  <dialog modal-mode="mega">
+    <img id="disp-img" src="" alt="">
+    <form method="dialog">
+      <button class="menu-button" value="cancel">
+        <i class="material-icons">close</i>
+      </button>
+    </form>
+  </dialog>
   
 </body>
+<script>
+  window.addEventListener("load", e=>{
+    document.querySelectorAll("img").forEach(item => item.addEventListener("click", e => {
+      console.log();
+      let dialog = document.querySelector("dialog");
+      document.querySelector("#disp-img").setAttribute("src", e.srcElement.getAttribute("src"));
+      dialog.showModal();
+    }));
+  });
+</script>
 
 </html>
