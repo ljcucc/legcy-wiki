@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Lit - Web Component">
+
+  <meta property="og:site_name" content="wwwiki - ljcu.cc">
+  <meta property="og:title" content="Lit - Web Component" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" itemprop="image" content="./assets/default-header.png">
+  <meta property="og:type" content="website" />
+
+  <title>Lit - Web Component</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <div class="toc">
+      </div>
+
+  <div class="body">
+    <div class="topbar">
+      <a class="title" href="index.html">wwwiki - ljcu.cc</a>
+    </div>
+  
+    <div class="content">
+            <img class="header-img" src="assets/default-header.png" alt="default header" />
+      <h1 class="title">Lit - Web Component</h1>
+        
+  
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/QBa1_QQnRcs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+      <h2 id="lit-是一個-web-comp-的函式庫">Lit 是一個 <a
+      href="./web-comp">Web Comp</a> 的函式庫</h2>
+      <p>開始使用 Lit 有 2 種方式：</p>
+      <ul>
+      <li>使用 CDN 直接在靜態網頁使用 Lit</li>
+      <li>使用 dev server resolve path of modules</li>
+      </ul>
+      <h3 id="cdn-方法">CDN 方法</h3>
+      <p>直接 paste 這段 code 在 JS module 的最上面：</p>
+      <pre><code>import {LitElement, html, css} from &#39;https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js&#39;;</code></pre>
+      <h3 id="dev-server-方法">Dev server 方法</h3>
+      <p>此作法較有技巧性，首先你需要一個 dev server 來 resolve path of
+      modules。Lit 官方有提供 MordenWeb dev server
+      的方法，但如果可以你可以使用 webpack 或其他的工具。</p>
+      <h1 id="how-it-works">How it works</h1>
+      <p>Lit 的 Element 也可以當作 HTMLElement 做使用，一下是一個 Lit
+      最基礎的結構：</p>
+      <pre><code>class MyComp extends HTMLElement{
+  render(){
+    return html`
+      Hello World
+    `;
+  }
+}</code></pre>
+      <p>其中 <code>html</code> 的寫法採用了 JS 中的 <a
+      href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Template
+      String</a>。</p>
+      <blockquote>
+      <p>更多詳細資訊可以參考 Lit 官方手冊： <a
+      href="https://lit.dev/docs/"
+      class="uri">https://lit.dev/docs/</a></p>
+      </blockquote>
+      <ul class="task-list">
+      <li><input type="checkbox" disabled="" />
+      Lifecycle</li>
+      <li><input type="checkbox" disabled="" />
+      Template</li>
+      <li><input type="checkbox" disabled="" />
+      Styling</li>
+      <li><input type="checkbox" disabled="" />
+      Loop / List</li>
+      <li><input type="checkbox" disabled="" />
+      Properties &amp; Attributes</li>
+      <li><input type="checkbox" disabled="" />
+      Events</li>
+      </ul>
+    </div>
+  </div>
+    <!-- image display dialog -->
+  <dialog modal-mode="mega">
+    <img id="disp-img" src="" alt="">
+    <form method="dialog">
+      <button class="menu-button" value="cancel">
+        <i class="material-icons">close</i>
+      </button>
+    </form>
+  </dialog>
+  
+</body>
+<script>
+  window.addEventListener("load", e=>{
+    document.querySelectorAll("img").forEach(item => item.addEventListener("click", e => {
+      console.log();
+      let dialog = document.querySelector("dialog");
+      document.querySelector("#disp-img").setAttribute("src", e.srcElement.getAttribute("src"));
+      dialog.showModal();
+    }));
+  });
+</script>
+
+</html>

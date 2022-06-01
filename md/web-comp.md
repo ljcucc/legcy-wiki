@@ -1,5 +1,5 @@
 ---
-title: Web Component & Lit
+title: Web Component
 public: true
 ...
 
@@ -55,9 +55,7 @@ customElements.define("material-icons", Icons);
 
 你甚至可以在 Vue、React 裡面使用它。
 
-參考這部影片了解更多關於 lit 的實作：
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QBa1_QQnRcs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+> 了解更多關於 lit 的實作: [Lit](./web-comp-lit)
 
 ### How it works
 
