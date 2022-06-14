@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Apple Script">
+
+  <meta property="og:site_name" content="wwwiki - ljcu.cc">
+  <meta property="og:title" content="Apple Script" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" itemprop="image" content="./assets/default-header.png">
+  <meta property="og:type" content="website" />
+
+  <title>Apple Script</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <div class="toc">
+      </div>
+
+  <div class="body">
+    <div class="topbar">
+      <a class="title" href="index.html">wwwiki - ljcu.cc</a>
+    </div>
+  
+    <div class="content">
+            <img class="header-img" src="assets/default-header.png" alt="default header" />
+      <h1 class="title">Apple Script</h1>
+        
+  
+      <p>The Apple Script also support JavaScript, and it’s recommended
+      to use JavaScript since there’s a lot of documents about
+      JavaScript API more then Apple Script basic syntax.</p>
+      <h1 id="automatic">Automatic</h1>
+      <p>Type words:</p>
+      <div class="sourceCode" id="cb1"><pre
+      class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> sys <span class="op">=</span> <span class="fu">Application</span>(<span class="st">&quot;System Events&quot;</span>)<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys<span class="op">.</span><span class="fu">keystroke</span>(<span class="st">&quot;text you want to type in&quot;</span>)<span class="op">;</span></span></code></pre></div>
+      <p>Key press:</p>
+      <div class="sourceCode" id="cb2"><pre
+      class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> sys <span class="op">=</span> <span class="fu">Application</span>(<span class="st">&quot;System Events&quot;</span>)<span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sys<span class="op">.</span><span class="fu">keyCode</span>(<span class="dv">36</span><span class="op">,</span> {<span class="dt">using</span><span class="op">:</span> using})<span class="op">;</span> <span class="co">// 36: Enter / Return</span></span></code></pre></div>
+      <p>Delays:</p>
+      <div class="sourceCode" id="cb3"><pre
+      class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> sys <span class="op">=</span> <span class="fu">Application</span>(<span class="st">&quot;System Events&quot;</span>)<span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sys<span class="op">.</span><span class="fu">keystroke</span>(<span class="st">&quot;text you want to type in&quot;</span>)<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">delay</span>(<span class="fl">0.5</span>)<span class="op">;</span> <span class="co">// delay 0.5 sec</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sys<span class="op">.</span><span class="fu">keyCode</span>(<span class="dv">36</span><span class="op">,</span> {<span class="dt">using</span><span class="op">:</span> using})<span class="op">;</span> <span class="co">// 36: Enter / Return</span></span></code></pre></div>
+      <p>Focus on a application:</p>
+      <div class="sourceCode" id="cb4"><pre
+      class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> app <span class="op">=</span> <span class="fu">Application</span>(<span class="st">&quot;Discord&quot;</span>)<span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">activate</span>()<span class="op">;</span></span></code></pre></div>
+    </div>
+  </div>
+    <!-- image display dialog -->
+  <dialog modal-mode="mega">
+    <img id="disp-img" src="" alt="">
+    <form method="dialog">
+      <button class="menu-button" value="cancel">
+        <i class="material-icons">close</i>
+      </button>
+    </form>
+  </dialog>
+  
+</body>
+<script>
+  window.addEventListener("load", e=>{
+    document.querySelectorAll("img").forEach(item => item.addEventListener("click", e => {
+      console.log();
+      let dialog = document.querySelector("dialog");
+      document.querySelector("#disp-img").setAttribute("src", e.srcElement.getAttribute("src"));
+      dialog.showModal();
+    }));
+  });
+</script>
+
+</html>
