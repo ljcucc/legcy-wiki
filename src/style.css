@@ -108,6 +108,7 @@ h3{
 
 h1{
   font-size: 60px !important;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .content>*{
@@ -197,7 +198,7 @@ pre::-webkit-scrollbar-thumb{
   width: 5px;
 }
 
-code{
+code, code > *, code>span>*{
   font-family: 'Roboto Mono', monospace !important;
 }
 
@@ -205,9 +206,37 @@ pre>code{
   width: 100%;
 }
 
-pre>code::selection{
+pre>code::selection, code > *::selection, code>span>*::selection{
   background-color: white !important;
   color: black !important;
+}
+
+.kw, .cf{
+  color:#ef5d62;
+}
+
+.fu{
+  color:#42a2de;
+}
+
+.op{
+  color:#ebe6b2;
+}
+
+.st, .pp, .im{
+  color:#6ab017;
+}
+
+.fl, .dt{
+  color: #ff8400;
+}
+
+.dv{
+  color: #ff8400;
+}
+
+.co{
+  color: #79807a;
 }
 
 .topbar{

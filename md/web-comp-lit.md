@@ -15,7 +15,7 @@ title: Lit - Web Component
 
 直接 paste 這段 code 在 JS module 的最上面：
 
-```
+```js
 import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
 ```
 
@@ -27,7 +27,7 @@ import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/
 
 Lit 的 Element 也可以當作 HTMLElement 做使用，一下是一個 Lit 最基礎的結構：
 
-```
+```js
 class MyComp extends HTMLElement{
   render(){
     return html`

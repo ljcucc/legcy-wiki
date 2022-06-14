@@ -43,7 +43,8 @@
       </ul>
       <h3 id="cdn-方法">CDN 方法</h3>
       <p>直接 paste 這段 code 在 JS module 的最上面：</p>
-      <pre><code>import {LitElement, html, css} from &#39;https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js&#39;;</code></pre>
+      <div class="sourceCode" id="cb1"><pre
+      class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {LitElement<span class="op">,</span> html<span class="op">,</span> css} <span class="im">from</span> <span class="st">&#39;https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js&#39;</span><span class="op">;</span></span></code></pre></div>
       <h3 id="dev-server-方法">Dev server 方法</h3>
       <p>此作法較有技巧性，首先你需要一個 dev server 來 resolve path of
       modules。Lit 官方有提供 MordenWeb dev server
@@ -51,13 +52,14 @@
       <h1 id="how-it-works">How it works</h1>
       <p>Lit 的 Element 也可以當作 HTMLElement 做使用，一下是一個 Lit
       最基礎的結構：</p>
-      <pre><code>class MyComp extends HTMLElement{
-  render(){
-    return html`
-      Hello World
-    `;
-  }
-}</code></pre>
+      <div class="sourceCode" id="cb2"><pre
+      class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyComp <span class="kw">extends</span> <span class="bu">HTMLElement</span>{</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">render</span>(){</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="vs">      Hello World</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="vs">    `</span><span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
       <p>其中 <code>html</code> 的寫法採用了 JS 中的 <a
       href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Template
       String</a>。</p>

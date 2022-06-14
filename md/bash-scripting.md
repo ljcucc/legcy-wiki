@@ -43,7 +43,7 @@ bash 是一種 [shell](https://zh.wikipedia.org/zh-tw/%E6%AE%BC%E5%B1%A4) ，簡
 
 ### 撰寫 bash 腳本
 
-```
+```bash
 # 這個是註解
 $ touch my_script.sh
 

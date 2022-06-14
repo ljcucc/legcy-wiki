@@ -60,7 +60,7 @@ this guideline (or note) will focusing on "how to write C codes to build a proje
 
 this is a main program without any arguments:
 
-```c=
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -72,7 +72,7 @@ int main(void){
 
 you may see some codes will written like this:
 
-```c=
+```c
 int main(void){
   // something in your main function...
   exit(0);

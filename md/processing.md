@@ -24,14 +24,14 @@ Processing originally developed and use Java as programming language, today it h
 
 Get web IDE on https://editor.p5js.org, because p5.js is completely run on you browser, so you can directly import library to your web page (https://cdnjs.com/libraries/p5.js).
 
-```
+```html
 <!-- import p5js library -->
 <script src="./p5js.min.js"></script>
 ```
 
 the main program should be declared at the root (if you want your ):
 
-```
+```js
 function setup(){
   // setup() will run before draw() and only run once
 }
@@ -45,13 +45,13 @@ function draw(){
 
 You can also simplify the code like this, as the form of #つぶやきProcessing :
 
-```
+```js
 t=0;a=10;draw(_)=>{t++||/*your code here*/}
 ```
 
 here's an example of how:
 
-```
+```js
 t=0;r=0.1;g=10;l=10;
 draw=(_)=>{t++||createCanvas(w=400, w);background(255);
 for(var i = 0; i < Math.round(width/g); i++){

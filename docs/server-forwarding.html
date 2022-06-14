@@ -57,19 +57,24 @@
       <p>任何 client 只要有裝 SSH 都可以使用</p>
       <h3 id="local-forwarding---把自己的-server-forward-到-host">Local
       Forwarding - 把自己的 server forward 到 host</h3>
-      <pre><code>ssh -L [host-bind_address:]&lt;my-port&gt;:&lt;my-host&gt;:&lt;host-port&gt; &lt;SSH Server&gt;</code></pre>
+      <div class="sourceCode" id="cb1"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-L</span> [host-bind_address:]<span class="op">&lt;</span>my-port<span class="op">&gt;</span>:<span class="op">&lt;</span>my-host<span class="op">&gt;</span>:<span class="op">&lt;</span>host-port<span class="op">&gt;</span> <span class="op">&lt;</span>SSH Server<span class="op">&gt;</span></span></code></pre></div>
       <p>例如 我想要把我 local 的 8088 公開到 public server 的 80:</p>
-      <pre><code>ssh -L 0.0.0.0:8088:localhost:80 admin@ljcu.cc</code></pre>
+      <div class="sourceCode" id="cb2"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-L</span> 0.0.0.0:8088:localhost:80 admin@ljcu.cc</span></code></pre></div>
       <h3
       id="remote-forwarding---把-server-的-port-forward-到我的電腦">Remote
       Forwarding - 把 server 的 port forward 到我的電腦</h3>
-      <pre><code>ssh -R [bind_address:]&lt;port&gt;:&lt;host&gt;:&lt;host_port&gt; &lt;SSH Server&gt;</code></pre>
+      <div class="sourceCode" id="cb3"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-R</span> [bind_address:]<span class="op">&lt;</span>port<span class="op">&gt;</span>:<span class="op">&lt;</span>host<span class="op">&gt;</span>:<span class="op">&lt;</span>host_port<span class="op">&gt;</span> <span class="op">&lt;</span>SSH Server<span class="op">&gt;</span></span></code></pre></div>
       <p>例如 我想要把 host server 的 8088 拉到我的 8080 可以使用：</p>
-      <pre><code>ssh -R 0.0.0.0:8088:localhost:8080 admin@ljcu.cc</code></pre>
+      <div class="sourceCode" id="cb4"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-R</span> 0.0.0.0:8088:localhost:8080 admin@ljcu.cc</span></code></pre></div>
       <h3 id="dynamic-port-forwarding---建立一個本地代理伺服器">Dynamic
       Port Forwarding - 建立一個本地代理伺服器</h3>
       <p>example:</p>
-      <pre><code>ssh -D [proxy-server-port] admin@ljcu.cc</code></pre>
+      <div class="sourceCode" id="cb5"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-D</span> [proxy-server-port] admin@ljcu.cc</span></code></pre></div>
       <blockquote>
       <p>更詳細的詳解可以參考：<a
       href="https://johnliu55.tw/ssh-tunnel.html"
@@ -81,8 +86,10 @@
       <h3 id="client-side">Client side</h3>
       <p>沒有 public IP 的那個，例如我的 Raspberry pi。</p>
       <p>安裝 OpenVPN：</p>
-      <pre><code>curl -L https://install.pivpn.io | bash</code></pre>
-      <pre><code>sudo apt-get install openvpn</code></pre>
+      <div class="sourceCode" id="cb6"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> https://install.pivpn.io <span class="kw">|</span> <span class="fu">bash</span></span></code></pre></div>
+      <div class="sourceCode" id="cb7"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install openvpn</span></code></pre></div>
       <blockquote>
       <p>為 Raspberry pi 快速設定 OpenVPN Client： <a
       href="https://pivpn.io/" target="blank">https://pivpn.io/</a> 、

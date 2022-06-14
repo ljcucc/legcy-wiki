@@ -21,25 +21,25 @@ public: true
 
 ### Local Forwarding - 把自己的 server forward 到 host
 
-```
+```bash
 ssh -L [host-bind_address:]<my-port>:<my-host>:<host-port> <SSH Server>
 ```
 
 例如 我想要把我 local 的 8088 公開到 public server 的 80:
 
-```
+```bash
 ssh -L 0.0.0.0:8088:localhost:80 admin@ljcu.cc
 ```
 
 ### Remote Forwarding - 把 server 的 port forward 到我的電腦
 
-```
+```bash
 ssh -R [bind_address:]<port>:<host>:<host_port> <SSH Server>
 ```
 
 例如 我想要把 host server 的 8088 拉到我的 8080 可以使用：
 
-```
+```bash
 ssh -R 0.0.0.0:8088:localhost:8080 admin@ljcu.cc
 ```
 
@@ -47,7 +47,7 @@ ssh -R 0.0.0.0:8088:localhost:8080 admin@ljcu.cc
 
 example:
 
-```
+```bash
 ssh -D [proxy-server-port] admin@ljcu.cc
 ```
 
@@ -64,11 +64,11 @@ ssh -D [proxy-server-port] admin@ljcu.cc
 
 安裝 OpenVPN：
 
-```
+```bash
 curl -L https://install.pivpn.io | bash
 ```
 
-```
+```bash
 sudo apt-get install openvpn
 ```
 

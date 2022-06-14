@@ -65,29 +65,33 @@
       completely run on you browser, so you can directly import library
       to your web page (<a href="https://cdnjs.com/libraries/p5.js"
       class="uri">https://cdnjs.com/libraries/p5.js</a>).</p>
-      <pre><code>&lt;!-- import p5js library --&gt;
-&lt;script src=&quot;./p5js.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+      <div class="sourceCode" id="cb1"><pre
+      class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- import p5js library --&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;./p5js.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
       <p>the main program should be declared at the root (if you want
       your ):</p>
-      <pre><code>function setup(){
-  // setup() will run before draw() and only run once
-}
-
-function draw(){
-  // draw() will run forever
-}</code></pre>
+      <div class="sourceCode" id="cb2"><pre
+      class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setup</span>(){</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// setup() will run before draw() and only run once</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>(){</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">// draw() will run forever</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
       <blockquote>
       <p>you can get all function references from official website: <a
       href="https://p5js.org/reference/">p5js.org/reference</a></p>
       </blockquote>
       <p>You can also simplify the code like this, as the form of
       #つぶやきProcessing :</p>
-      <pre><code>t=0;a=10;draw(_)=&gt;{t++||/*your code here*/}</code></pre>
+      <div class="sourceCode" id="cb3"><pre
+      class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>t<span class="op">=</span><span class="dv">0</span><span class="op">;</span>a<span class="op">=</span><span class="dv">10</span><span class="op">;</span><span class="fu">draw</span>(_)<span class="kw">=&gt;</span>{t<span class="op">++||</span><span class="co">/*your code here*/</span>}</span></code></pre></div>
       <p>here’s an example of how:</p>
-      <pre><code>t=0;r=0.1;g=10;l=10;
-draw=(_)=&gt;{t++||createCanvas(w=400, w);background(255);
-for(var i = 0; i &lt; Math.round(width/g); i++){
-strokeWeight(l-(abs(mouseX-i*g,2))*(r));line(i*g, 0, i*g, height)}}</code></pre>
+      <div class="sourceCode" id="cb4"><pre
+      class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>t<span class="op">=</span><span class="dv">0</span><span class="op">;</span>r<span class="op">=</span><span class="fl">0.1</span><span class="op">;</span>g<span class="op">=</span><span class="dv">10</span><span class="op">;</span>l<span class="op">=</span><span class="dv">10</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>draw<span class="op">=</span>(_)<span class="kw">=&gt;</span>{t<span class="op">++||</span><span class="fu">createCanvas</span>(w<span class="op">=</span><span class="dv">400</span><span class="op">,</span> w)<span class="op">;</span><span class="fu">background</span>(<span class="dv">255</span>)<span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(width<span class="op">/</span>g)<span class="op">;</span> i<span class="op">++</span>){</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">strokeWeight</span>(l<span class="op">-</span>(<span class="fu">abs</span>(mouseX<span class="op">-</span>i<span class="op">*</span>g<span class="op">,</span><span class="dv">2</span>))<span class="op">*</span>(r))<span class="op">;</span><span class="fu">line</span>(i<span class="op">*</span>g<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> i<span class="op">*</span>g<span class="op">,</span> height)}}</span></code></pre></div>
     </div>
   </div>
     <!-- image display dialog -->

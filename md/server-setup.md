@@ -14,7 +14,7 @@ All services are running on docker or multipass (QEMU VM) to have easy managemen
 
 ### Get docker
 
-```
+```js
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```

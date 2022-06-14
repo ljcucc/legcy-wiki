@@ -19,7 +19,7 @@ From now on, you can build your website by using components without dealing with
 
 在這裡我使用 Lit 函式庫做示範, 下是一個顯示Material icon的 Web Comp：
 
-```
+```js
 import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
 
 class Icons extends LitElement{
@@ -45,7 +45,7 @@ customElements.define("material-icons", Icons);
 
 你可以把這段 JS 當作 script tag import，之後就可以直接使用它了⋯⋯ 就像這樣：
 
-```
+```html
 <script type="module" src="./icon.js">
 
 ...
@@ -68,7 +68,7 @@ customElements.define("material-icons", Icons);
 ### Custom elements & HTML templates
 
 HTML: 
-```
+```html
 <!-- define your template for custom element -->
 
 <template id="my-paragraph">
@@ -85,7 +85,7 @@ HTML:
 ```
 
 JavaScript:
-```
+```js
 class MyElement extends HTMLElement{
   constructor() {
     super();
@@ -102,7 +102,7 @@ customElements.define('my-paragraph', MyElement);             // define the cust
 ```
 
 usage:
-```
+```html
 <my-paragraph></my-paragraph>
 ```
 
