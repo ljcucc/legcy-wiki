@@ -32,17 +32,28 @@
       <h1 class="title">Apple Script</h1>
         
   
+      <blockquote>
+      <p>Want to write pure Apple Script Automation? this might help: <a
+      href="https://eastmanreference.com/how-to-automate-your-keyboard-in-mac-os-x-with-applescript">How
+      to automate your keyboard in Mac OS X with AppleScript</a></p>
+      </blockquote>
       <p>Apple script is an scripting language specific for macOS for
       scripting and automation.</p>
       <p>The Apple Script also have JavaScript variant (which support
       JavaScript syntax and AppleScript API), and it’s recommended to
       use JavaScript since there’s a lot of documents about JavaScript
-      API more then Apple Script basic syntax.</p>
+      tutuorial, and Apple Script’s syntax is more confused.</p>
       <blockquote>
       <p>You can read more about AppleScript on <a
       href="https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html">official
       archived document</a></p>
       </blockquote>
+      <p>To get started, open <strong>Script Editor</strong> on mac,
+      then switch AppleScript to JavaScript at the top-left menu. when
+      finished your script, click <span class="emoji"
+      data-emoji="hammer">🔨</span> icon to build and check syntax
+      (which will update syntax highlight), then click run button to
+      start.</p>
       <h1 id="automatic">Automatic</h1>
       <p>Type words:</p>
       <div class="sourceCode" id="cb1"><pre
@@ -51,17 +62,48 @@
       <p>Key press:</p>
       <div class="sourceCode" id="cb2"><pre
       class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> sys <span class="op">=</span> <span class="fu">Application</span>(<span class="st">&quot;System Events&quot;</span>)<span class="op">;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sys<span class="op">.</span><span class="fu">keyCode</span>(<span class="dv">36</span><span class="op">,</span> {<span class="dt">using</span><span class="op">:</span> using})<span class="op">;</span> <span class="co">// 36: Enter / Return</span></span></code></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sys<span class="op">.</span><span class="fu">keyCode</span>(<span class="dv">36</span><span class="op">,</span> {<span class="dt">using</span><span class="op">:</span> []})<span class="op">;</span> <span class="co">// 36: Enter / Return</span></span></code></pre></div>
       <p>Delays:</p>
       <div class="sourceCode" id="cb3"><pre
       class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> sys <span class="op">=</span> <span class="fu">Application</span>(<span class="st">&quot;System Events&quot;</span>)<span class="op">;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sys<span class="op">.</span><span class="fu">keystroke</span>(<span class="st">&quot;text you want to type in&quot;</span>)<span class="op">;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">delay</span>(<span class="fl">0.5</span>)<span class="op">;</span> <span class="co">// delay 0.5 sec</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sys<span class="op">.</span><span class="fu">keyCode</span>(<span class="dv">36</span><span class="op">,</span> {<span class="dt">using</span><span class="op">:</span> using})<span class="op">;</span> <span class="co">// 36: Enter / Return</span></span></code></pre></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sys<span class="op">.</span><span class="fu">keyCode</span>(<span class="dv">36</span><span class="op">,</span> {<span class="dt">using</span><span class="op">:</span> []})<span class="op">;</span> <span class="co">// 36: Enter / Return</span></span></code></pre></div>
       <p>Focus on a application:</p>
       <div class="sourceCode" id="cb4"><pre
       class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> app <span class="op">=</span> <span class="fu">Application</span>(<span class="st">&quot;Discord&quot;</span>)<span class="op">;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">activate</span>()<span class="op">;</span></span></code></pre></div>
+      <p>Example: Type Hydra music bot command on discord to add music
+      to playlist:</p>
+      <div class="sourceCode" id="cb5"><pre
+      class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> sys <span class="op">=</span> <span class="fu">Application</span>(<span class="st">&quot;System Events&quot;</span>)<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> playlist <span class="op">=</span> <span class="vs">`play https://datashat.net/music_for_programming_64-strepsil.mp3</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="vs">play https://datashat.net/music_for_programming_63-t-flx.mp3</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="vs">play https://datashat.net/music_for_programming_62-out-grey-lives.mp3</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="vs">play https://datashat.net/music_for_programming_62-our_grey_lives.mp3</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="vs">play https://datashat.net/music_for_programming_61-linnley.mp3</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="vs">play https://datashat.net/music_for_programming_60-tundra.mp3</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="vs">...</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="vs">play https://datashat.net/music_for_programming_3-datassette.mp3</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="vs">play https://datashat.net/music_for_programming_2-sunjammer.mp3</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="vs">play https://datashat.net/music_for_programming_1-datassette.mp3`</span><span class="op">;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>playlist <span class="op">=</span> playlist<span class="op">.</span><span class="fu">split</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)<span class="op">;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> activeChar <span class="op">=</span> <span class="st">&#39;!&#39;</span><span class="op">;</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> app <span class="op">=</span> <span class="fu">Application</span>(<span class="st">&quot;Discord&quot;</span>)<span class="op">;</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">activate</span>()<span class="op">;</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(<span class="kw">var</span> index <span class="kw">in</span> playlist){</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> item <span class="op">=</span> playlist[index]<span class="op">;</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">delay</span>(<span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  sys<span class="op">.</span><span class="fu">keystroke</span>(<span class="vs">`</span><span class="sc">${</span>activeChar<span class="sc">}</span><span class="vs">play </span><span class="sc">${</span>item<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  sys<span class="op">.</span><span class="fu">keyCode</span>(<span class="dv">36</span><span class="op">,</span> {<span class="dt">using</span><span class="op">:</span> []})<span class="op">;</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
     </div>
   </div>
     <!-- image display dialog -->
