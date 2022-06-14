@@ -223,7 +223,7 @@ pre>code::selection, code > *::selection, code>span>*::selection{
   color:#ebe6b2;
 }
 
-.st, .pp, .im{
+.st, .pp, .im, .vs{
   color:#6ab017;
 }
 
