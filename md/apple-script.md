@@ -50,16 +50,16 @@ Example: Type Hydra music bot command on discord to add music to playlist:
 ```js
 var sys = Application("System Events");
 
-var playlist = `play https://datashat.net/music_for_programming_64-strepsil.mp3
-play https://datashat.net/music_for_programming_63-t-flx.mp3
-play https://datashat.net/music_for_programming_62-out-grey-lives.mp3
-play https://datashat.net/music_for_programming_62-our_grey_lives.mp3
-play https://datashat.net/music_for_programming_61-linnley.mp3
-play https://datashat.net/music_for_programming_60-tundra.mp3
+var playlist = `https://datashat.net/music_for_programming_64-strepsil.mp3
+https://datashat.net/music_for_programming_63-t-flx.mp3
+https://datashat.net/music_for_programming_62-out-grey-lives.mp3
+https://datashat.net/music_for_programming_62-our_grey_lives.mp3
+https://datashat.net/music_for_programming_61-linnley.mp3
+https://datashat.net/music_for_programming_60-tundra.mp3
 ...
-play https://datashat.net/music_for_programming_3-datassette.mp3
-play https://datashat.net/music_for_programming_2-sunjammer.mp3
-play https://datashat.net/music_for_programming_1-datassette.mp3`;
+https://datashat.net/music_for_programming_3-datassette.mp3
+https://datashat.net/music_for_programming_2-sunjammer.mp3
+https://datashat.net/music_for_programming_1-datassette.mp3`;
 
 playlist = playlist.split("\n");
 
