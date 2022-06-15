@@ -107,3 +107,7 @@ usage:
 ```
 
 > ref: https://github.com/mdn/web-components-examples/blob/main/simple-template/main.js
+
+# Some useful web components:
+
+* [Codemirror for web component](https://www.webcomponents.org/element/@vanillawc/wc-codemirror)

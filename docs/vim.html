@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Vim">
+
+  <meta property="og:site_name" content="wwwiki - ljcu.cc">
+  <meta property="og:title" content="Vim" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" itemprop="image" content="./assets/default-header.png">
+  <meta property="og:type" content="website" />
+
+  <title>Vim</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <div class="toc">
+      </div>
+
+  <div class="body">
+    <div class="topbar">
+      <a class="title" href="index.html">wwwiki - ljcu.cc</a>
+    </div>
+  
+    <div class="content">
+            <img class="header-img" src="assets/default-header.png" alt="default header" />
+      <h1 class="title">Vim</h1>
+        
+  
+      <p>vim is a Vi IMproved Editor, which is a keyboard-only text
+      editor allow you to type only with your keyboard by using series
+      of key-binds.</p>
+      <h1 id="basic-of-vim">Basic of vim</h1>
+      <p>Vim have 3 mode while you enter:</p>
+      <ul>
+      <li>Normal mode</li>
+      <li>Visual mode</li>
+      <li>Insert mode</li>
+      </ul>
+      <p>Normal mode is the default mode when you enter vim, in this
+      mode you can browsing, moving cursor, typing commands.</p>
+      <p>Visual mode is the mode you can viewing mode, select text.</p>
+      <p>Insert mode is the mode you can editing text, insert text.</p>
+      <p>To moving your cursor by pressing:</p>
+      <ul>
+      <li>j for down</li>
+      <li>k for up</li>
+      <li>h for left</li>
+      <li>l for right</li>
+      </ul>
+      <p>To enter visual mode, you can using <code>v</code> to activate
+      text selection, or <code>V</code> (Shift+V) to select whole
+      line.</p>
+      <p>To enter edit mode, <code>i</code> for enter after the cursor,
+      <code>I</code> (Shift+I) to edit the first char of a line,
+      <code>A</code> (Shift+A) for a last char of the line.</p>
+      <p>more key bind here:</p>
+      <pre><code>gg          for goto top file
+G (shift+G) for goto bottom of the file
+
+Ctrl+h           for goto top of the screen
+Ctrl+m           for goto middle of the screen
+Ctrl+l           for goto bottom of the screen</code></pre>
+      <h2 id="normal-mode-operators---combination-of-commands">Normal
+      mode operators - Combination of commands</h2>
+      <p>Vim’s key bind allows you to doing some combination, which is
+      the most powerful design of vim. for example:</p>
+      <pre><code>[c]hange + [i]n + [w]ord = ciw    which will replace all content in a word.
+[v]isual + [i]n + [&quot;]    = ci&quot;    which will selected all content in &quot;.
+[d]elete + [i]n + [(]    = di(    which will delete / cut all content in paren.</code></pre>
+      <h1 id="configuration---vimrc-file">Configuration - vimrc
+      file</h1>
+      <blockquote>
+      <p>You can get my <code>.vimrc</code> file on my <a
+      href="https://github.com/ljcucc/terminal_configs/blob/master/vimrc/.vimrc">github</a></p>
+      </blockquote>
+      <p>Vim’s config file is powerful, because the vimrc is a script
+      file, so you can do a lot of thing with in the config file, for
+      example apply different config in different os.</p>
+      <h2 id="keyboard-mapping">Keyboard mapping</h2>
+      <blockquote>
+      <p>learn more about mapping detials on <a
+      href="https://dev.to/mr_destructive/vim-keymapping-guide-3olb">Vim:
+      Key mapping Guide</a></p>
+      </blockquote>
+      <p>usage of <code>"map"</code>:</p>
+      <pre><code>{mode}{attr}map {key} {command}</code></pre>
+      <h3 id="normal-visual-mode-mapping">Normal / Visual mode
+      mapping</h3>
+      <p>usage:</p>
+      <pre class="vimrc"><code>map {key} {command}
+</code></pre>
+      <p>for example</p>
+      <h3 id="normal-mode-mapping">Normal mode mapping</h3>
+      <p>usage</p>
+      <pre class="vim"><code>nnoremap {key} {command}</code></pre>
+    </div>
+  </div>
+    <!-- image display dialog -->
+  <dialog modal-mode="mega">
+    <img id="disp-img" src="" alt="">
+    <form method="dialog">
+      <button class="menu-button" value="cancel">
+        <i class="material-icons">close</i>
+      </button>
+    </form>
+  </dialog>
+  
+</body>
+<script>
+  window.addEventListener("load", e=>{
+    document.querySelectorAll("img").forEach(item => item.addEventListener("click", e => {
+      console.log();
+      let dialog = document.querySelector("dialog");
+      document.querySelector("#disp-img").setAttribute("src", e.srcElement.getAttribute("src"));
+      dialog.showModal();
+    }));
+  });
+</script>
+
+</html>
