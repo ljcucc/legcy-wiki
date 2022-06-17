@@ -21,6 +21,14 @@ tools and dependencies for compiling DWM:
 apk add gcc make libx11-dev libxft-dev 
 ```
 
+clone dwm:
+
+```bash
+git clone https://git.suckless.org/dwm
+```
+
+> ref from the issue [1640](https://github.com/ish-app/ish/issues/1640), if you stuck on resolving while you clone, try stop it and run `git config --global pack.threads "1"` then try to clone again.
+
 Disable xinerama in `config.mk` since dwm will only run in a virtual headless monitor of VNC.
 
 then compile it:

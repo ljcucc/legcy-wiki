@@ -45,6 +45,16 @@
       <p>tools and dependencies for compiling DWM:</p>
       <div class="sourceCode" id="cb2"><pre
       class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apk</span> add gcc make libx11-dev libxft-dev </span></code></pre></div>
+      <p>clone dwm:</p>
+      <div class="sourceCode" id="cb3"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://git.suckless.org/dwm</span></code></pre></div>
+      <blockquote>
+      <p>ref from the issue <a
+      href="https://github.com/ish-app/ish/issues/1640">1640</a>, if you
+      stuck on resolving while you clone, try stop it and run
+      <code>git config --global pack.threads "1"</code> then try to
+      clone again.</p>
+      </blockquote>
       <p>Disable xinerama in <code>config.mk</code> since dwm will only
       run in a virtual headless monitor of VNC.</p>
       <p>then compile it:</p>
@@ -54,10 +64,10 @@
       than 1 min.</p>
       </blockquote>
       <p>then setup scripts and configs for vnc server:</p>
-      <div class="sourceCode" id="cb4"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-e</span> /etc/X11/xorg.conf.d <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mkdir</span> <span class="at">-p</span> /etc/X11/xorg.conf.d <span class="co"># If it doesn&#39;t exist, create it.</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code></pre></div>
+      <div class="sourceCode" id="cb5"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-e</span> /etc/X11/xorg.conf.d <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mkdir</span> <span class="at">-p</span> /etc/X11/xorg.conf.d <span class="co"># If it doesn&#39;t exist, create it.</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code></pre></div>
       <p>headless xorg monitor config:</p>
       <pre><code>cat &lt;&lt;HERE &gt; /etc/X11/xorg.conf.d/10-headless.conf
 Section &quot;Monitor&quot;
@@ -85,13 +95,13 @@ Section &quot;Screen&quot;
 EndSection
 HERE</code></pre>
       <p>create xinitrc:</p>
-      <div class="sourceCode" id="cb6"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&lt;&lt;THERE</span> <span class="op">&gt;</span> /root/.xinitrc</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">xrdb -merge ~/.Xresources</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">xterm -geometry 80x50+494+51 &amp;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">xterm -geometry 80x20+494-0 &amp;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="st">exec dwm</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="op">THERE</span></span></code></pre></div>
+      <div class="sourceCode" id="cb7"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&lt;&lt;THERE</span> <span class="op">&gt;</span> /root/.xinitrc</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="st">xrdb -merge ~/.Xresources</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">xterm -geometry 80x50+494+51 &amp;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">xterm -geometry 80x20+494-0 &amp;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">exec dwm</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="op">THERE</span></span></code></pre></div>
       <p>Create .Xresources file: (if your using xterm, but I’m using
       st)</p>
       <pre><code>cat &lt;&lt;EVERYWHERE &gt; /root/.Xresources
@@ -102,33 +112,33 @@ xterm*VT100.Translations: #override \
     Ctrl &lt;Key&gt; 0: set-vt-font(d)
 EVERYWHERE</code></pre>
       <p>then create a script to start vnc server:</p>
-      <div class="sourceCode" id="cb8"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/ash</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Stupidly simple script to start vnc.  </span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="va">CHECK</span><span class="op">=</span><span class="kw">`</span><span class="fu">ps</span> <span class="at">-o</span> args <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;{startx} /bin/sh /usr/bin/startx&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span><span class="kw">`</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Only run once.  The grep causes CHECK to equal 1</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$CHECK</span> <span class="ot">-eq</span> 1 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="co"># Nothing running, clear stale locks</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>   <span class="fu">rm</span> <span class="at">-rf</span> /tmp/.X<span class="pp">*</span> </span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>   <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$0</span><span class="st"> is already running.  We&#39;re done here.&quot;</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>   <span class="bu">exit</span> 1</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co"># See if location services are running already.  </span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Having them running reduces the odds of iSH getting</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co"># killed while in the background.</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="va">CHECK</span><span class="op">=</span><span class="kw">`</span><span class="fu">ps</span> <span class="at">-o</span> args <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;cat /dev/location&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span><span class="kw">`</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Only run once.  The grep causes CHECK to equal 1</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$CHECK</span> <span class="ot">-eq</span> 1 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>   <span class="fu">cat</span> /dev/location <span class="op">&gt;</span> /dev/null <span class="kw">&amp;</span></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="ex">startx</span> <span class="kw">&amp;</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="ex">x11vnc</span> <span class="at">-display</span> :0 <span class="at">-noshm</span> <span class="at">-forever</span> <span class="kw">&amp;</span> </span></code></pre></div>
+      <div class="sourceCode" id="cb9"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/ash</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Stupidly simple script to start vnc.  </span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="va">CHECK</span><span class="op">=</span><span class="kw">`</span><span class="fu">ps</span> <span class="at">-o</span> args <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;{startx} /bin/sh /usr/bin/startx&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span><span class="kw">`</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Only run once.  The grep causes CHECK to equal 1</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$CHECK</span> <span class="ot">-eq</span> 1 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="co"># Nothing running, clear stale locks</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>   <span class="fu">rm</span> <span class="at">-rf</span> /tmp/.X<span class="pp">*</span> </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>   <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$0</span><span class="st"> is already running.  We&#39;re done here.&quot;</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>   <span class="bu">exit</span> 1</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co"># See if location services are running already.  </span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Having them running reduces the odds of iSH getting</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># killed while in the background.</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="va">CHECK</span><span class="op">=</span><span class="kw">`</span><span class="fu">ps</span> <span class="at">-o</span> args <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;cat /dev/location&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span><span class="kw">`</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Only run once.  The grep causes CHECK to equal 1</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$CHECK</span> <span class="ot">-eq</span> 1 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>   <span class="fu">cat</span> /dev/location <span class="op">&gt;</span> /dev/null <span class="kw">&amp;</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="ex">startx</span> <span class="kw">&amp;</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="ex">x11vnc</span> <span class="at">-display</span> :0 <span class="at">-noshm</span> <span class="at">-forever</span> <span class="kw">&amp;</span> </span></code></pre></div>
     </div>
   </div>
     <!-- image display dialog -->
