@@ -214,6 +214,8 @@ make install
 
 # Build Blink Shell from source
 
+To getting no annoying ads during development (or even presentation), you may have to copmile whole app yourself to licensing.
+
 this will be a note for building from source since there's a lot of content that offcial already provided mroe clearly.
 
 first, since 2022 (IDK what will happens after this docs created) v15 of Blink Shell is not stable version on Github (But offcial provide stable v15 app on app store and IDK why and how).
@@ -223,3 +225,5 @@ then you may need to checkout to branch `blink-14`. then follow the guide then y
 > while you setup developer_setup.xcconfig, you may need the Develoepr ID of your Apple ID,visit apple's CloudKit website: icloud.developer.apple.com (type it yourself, I dont want to get into troble) and get it at the top of right with digits and upcase alphas.
 
 And beware you can't build ipa then sideloads to AltStore since not having a paid Developer account.
+
+> and finally **Remember to refresh app license once a week, Free developer license can only stands for 7 days since you didn't paid any money to Apple, which Apple NEED IT BADLY.**
