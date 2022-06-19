@@ -123,6 +123,26 @@
       for alias, <code>localhost</code> for HostName, and setup key…</p>
       <p>then <code>ssh [alias-name]</code>, you can use iSH shell from
       Blink Shell.</p>
+      <h2 id="vscode-on-blink-shell">VSCode on Blink Shell</h2>
+      <blockquote>
+      <p>because iSH Shell dosen’t suuport SCP and SFTP (refs: issue
+      #955 ), so VSCode will not working with iSH shell, instead you can
+      use tmux + vim or some weird emacs.</p>
+      </blockquote>
+      <p>so in this cases, you may need to prepare a remote server, or a
+      local protable server like Raspberry pi (since iPad should be
+      protable).</p>
+      <p>setup raspberry pi headlessly properly (you can reference from
+      this guide: <a href="https://github.com/ljcucc/rpi_guide"
+      class="uri">https://github.com/ljcucc/rpi_guide</a>), and setup
+      password-less (SSH key) login, then you can SSH to your raspberry
+      pi with VSCode by using command:</p>
+      <div class="sourceCode" id="cb2"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># After you setup Hosts in `config`</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> [host-alias]:[path]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># for example</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> rpi:/home/ljcucc/dwm</span></code></pre></div>
       <h1 id="ish-shell-vnc">iSH Shell + VNC</h1>
       <p>iSH is a Linux-like shell on iOS and iPadOS</p>
       <h2 id="install-dwm-and-vnc">Install DWM and VNC</h2>
@@ -132,15 +152,15 @@
       class="uri">https://github.com/ish-app/ish/wiki/Running-a-VNC-Server</a></p>
       </blockquote>
       <p>install dependencies:</p>
-      <div class="sourceCode" id="cb2"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apk</span> add x11vnc x11vnc-doc xvfb xterm xorg-server xf86-video-dummy </span></code></pre></div>
-      <p>tools and dependencies for compiling DWM:</p>
       <div class="sourceCode" id="cb3"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apk</span> add gcc make libx11-dev libxft-dev </span></code></pre></div>
-      <p>clone dwm:</p>
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apk</span> add x11vnc x11vnc-doc xvfb xterm xorg-server xf86-video-dummy </span></code></pre></div>
+      <p>tools and dependencies for compiling DWM:</p>
       <div class="sourceCode" id="cb4"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://git.suckless.org/dwm</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> dwm</span></code></pre></div>
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apk</span> add gcc make libx11-dev libxft-dev </span></code></pre></div>
+      <p>clone dwm:</p>
+      <div class="sourceCode" id="cb5"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://git.suckless.org/dwm</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> dwm</span></code></pre></div>
       <blockquote>
       <p>ref from the issue <a
       href="https://github.com/ish-app/ish/issues/1640">1640</a>, if you
@@ -157,10 +177,10 @@
       than 1 min.</p>
       </blockquote>
       <p>then setup scripts and configs for vnc server:</p>
-      <div class="sourceCode" id="cb6"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-e</span> /etc/X11/xorg.conf.d <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mkdir</span> <span class="at">-p</span> /etc/X11/xorg.conf.d <span class="co"># If it doesn&#39;t exist, create it.</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code></pre></div>
+      <div class="sourceCode" id="cb7"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-e</span> /etc/X11/xorg.conf.d <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mkdir</span> <span class="at">-p</span> /etc/X11/xorg.conf.d <span class="co"># If it doesn&#39;t exist, create it.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code></pre></div>
       <p>headless xorg monitor config:</p>
       <pre><code>cat &lt;&lt;HERE &gt; /etc/X11/xorg.conf.d/10-headless.conf
 Section &quot;Monitor&quot;
@@ -188,46 +208,47 @@ Section &quot;Screen&quot;
 EndSection
 HERE</code></pre>
       <p>create xinitrc:</p>
-      <div class="sourceCode" id="cb8"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&lt;&lt;THERE</span> <span class="op">&gt;</span> /root/.xinitrc</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="st">exec dwm</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="op">THERE</span></span></code></pre></div>
-      <p>then create a script to start vnc server:</p>
       <div class="sourceCode" id="cb9"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/ash</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Stupidly simple script to start vnc.  </span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="va">CHECK</span><span class="op">=</span><span class="kw">`</span><span class="fu">ps</span> <span class="at">-o</span> args <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;{startx} /bin/sh /usr/bin/startx&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span><span class="kw">`</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Only run once.  The grep causes CHECK to equal 1</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$CHECK</span> <span class="ot">-eq</span> 1 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="co"># Nothing running, clear stale locks</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>   <span class="fu">rm</span> <span class="at">-rf</span> /tmp/.X<span class="pp">*</span> </span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>   <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$0</span><span class="st"> is already running.  We&#39;re done here.&quot;</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>   <span class="bu">exit</span> 1</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co"># See if location services are running already.  </span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Having them running reduces the odds of iSH getting</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># killed while in the background.</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="va">CHECK</span><span class="op">=</span><span class="kw">`</span><span class="fu">ps</span> <span class="at">-o</span> args <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;cat /dev/location&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span><span class="kw">`</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Only run once.  The grep causes CHECK to equal 1</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$CHECK</span> <span class="ot">-eq</span> 1 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>   <span class="fu">cat</span> /dev/location <span class="op">&gt;</span> /dev/null <span class="kw">&amp;</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="ex">startx</span> <span class="kw">&amp;</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="ex">x11vnc</span> <span class="at">-display</span> :0 <span class="at">-noshm</span> <span class="at">-forever</span> <span class="kw">&amp;</span> </span></code></pre></div>
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&lt;&lt;THERE</span> <span class="op">&gt;</span> /root/.xinitrc</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="st">exec dwm</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="op">THERE</span></span></code></pre></div>
+      <p>then create a script to start vnc server:</p>
+      <div class="sourceCode" id="cb10"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/ash</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Stupidly simple script to start vnc.  </span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="va">CHECK</span><span class="op">=</span><span class="kw">`</span><span class="fu">ps</span> <span class="at">-o</span> args <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;{startx} /bin/sh /usr/bin/startx&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span><span class="kw">`</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Only run once.  The grep causes CHECK to equal 1</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$CHECK</span> <span class="ot">-eq</span> 1 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="co"># Nothing running, clear stale locks</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>   <span class="fu">rm</span> <span class="at">-rf</span> /tmp/.X<span class="pp">*</span> </span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>   <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$0</span><span class="st"> is already running.  We&#39;re done here.&quot;</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>   <span class="bu">exit</span> 1</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># See if location services are running already.  </span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Having them running reduces the odds of iSH getting</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co"># killed while in the background.</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="va">CHECK</span><span class="op">=</span><span class="kw">`</span><span class="fu">ps</span> <span class="at">-o</span> args <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;cat /dev/location&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span><span class="kw">`</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Only run once.  The grep causes CHECK to equal 1</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$CHECK</span> <span class="ot">-eq</span> 1 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>   <span class="fu">cat</span> /dev/location <span class="op">&gt;</span> /dev/null <span class="kw">&amp;</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="ex">startx</span> <span class="kw">&amp;</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="ex">x11vnc</span> <span class="at">-display</span> :0 <span class="at">-noshm</span> <span class="at">-forever</span> <span class="kw">&amp;</span> </span></code></pre></div>
+      <h3 id="specif">Specif</h3>
       <h3 id="install-st-terminal">Install st terminal</h3>
       <p>clone st repo</p>
-      <div class="sourceCode" id="cb10"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://git.suckless.org/st</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> st</span></code></pre></div>
-      <p>compile</p>
       <div class="sourceCode" id="cb11"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install</span></code></pre></div>
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://git.suckless.org/st</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> st</span></code></pre></div>
+      <p>compile</p>
+      <div class="sourceCode" id="cb12"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install</span></code></pre></div>
       <h1 id="build-blink-shell-from-source">Build Blink Shell from
       source</h1>
       <p>this will be a note for building from source since there’s a

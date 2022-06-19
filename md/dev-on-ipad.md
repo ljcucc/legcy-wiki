@@ -64,6 +64,22 @@ and proprely setup `/etc/ssh/sshd_config`, like: `Port 22000` or somthing. then 
 
 then `ssh [alias-name]`, you can use iSH shell from Blink Shell.
 
+## VSCode on Blink Shell
+
+> because iSH Shell dosen't suuport SCP and SFTP (refs: issue #955 ), so VSCode will not working with iSH shell, instead you can use tmux + vim or some weird emacs.
+
+so in this cases, you may need to prepare a remote server, or a local protable server like Raspberry pi (since iPad should be protable).
+
+setup raspberry pi headlessly properly (you can reference from this guide: https://github.com/ljcucc/rpi_guide), and setup password-less (SSH key) login, then you can SSH to your raspberry pi with VSCode by using command:
+
+```bash
+# After you setup Hosts in `config`
+code [host-alias]:[path]
+
+# for example
+code rpi:/home/ljcucc/dwm
+```
+
 # iSH Shell + VNC
 
 iSH is a Linux-like shell on iOS and iPadOS
@@ -178,6 +194,8 @@ fi
 startx &
 x11vnc -display :0 -noshm -forever & 
 ```
+
+### Specif
 
 ### Install st terminal
 
