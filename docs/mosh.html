@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Mosh - Mobile Shell">
+
+  <meta property="og:site_name" content="wwwiki - ljcu.cc">
+  <meta property="og:title" content="Mosh - Mobile Shell" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" itemprop="image" content="./assets/default-header.png">
+  <meta property="og:type" content="website" />
+
+  <title>Mosh - Mobile Shell</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <div class="toc">
+      </div>
+
+  <div class="body">
+    <div class="topbar">
+      <a class="title" href="index.html">wwwiki - ljcu.cc</a>
+    </div>
+  
+    <div class="content">
+            <img class="header-img" src="assets/default-header.png" alt="default header" />
+      <h1 class="title">Mosh - Mobile Shell</h1>
+        
+  
+      <p>Mosh is more stable and friendly then SSH since mosh using UPD,
+      and you’ll never get Broken pipe again.</p>
+      <h1 id="installation">Installation</h1>
+      <blockquote>
+      <p>mosh server is in-built in mosh package:</p>
+      </blockquote>
+      <p>Install for mac:</p>
+      <div class="sourceCode" id="cb1"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--HEAD</span> mosh</span></code></pre></div>
+      <p>Install from source:</p>
+      <pre><code>sudo apt install autoconf libssl-dev ncurses-dev protobuf-compiler
+
+git clone https://github.com/mobile-shell/mosh
+cd mosh
+./autogen.sh
+./configure
+make
+sudo make install</code></pre>
+    </div>
+  </div>
+    <!-- image display dialog -->
+  <dialog modal-mode="mega">
+    <img id="disp-img" src="" alt="">
+    <form method="dialog">
+      <button class="menu-button" value="cancel">
+        <i class="material-icons">close</i>
+      </button>
+    </form>
+  </dialog>
+  
+</body>
+<script>
+  window.addEventListener("load", e=>{
+    document.querySelectorAll("img").forEach(item => item.addEventListener("click", e => {
+      console.log();
+      let dialog = document.querySelector("dialog");
+      document.querySelector("#disp-img").setAttribute("src", e.srcElement.getAttribute("src"));
+      dialog.showModal();
+    }));
+  });
+</script>
+
+</html>

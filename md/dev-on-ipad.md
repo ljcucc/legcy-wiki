@@ -33,6 +33,7 @@ in this section, you need two apps:
 
 the best feature of Blink Shell is it having some awesome features:
 
+* [Mosh](./mosh)
 * multi-monitor support (without multi-monitor or external monitor support, looking at the 11-inch small screen all day can be painful and harmful to your eyes)
 * Powerline fonts
 * VSCode support (in iSH Shell case might not works, since iSH dosen't support scp and sftp).
