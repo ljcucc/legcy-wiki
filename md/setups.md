@@ -3,13 +3,13 @@ title: My Setups
 public: "true"
 ...
 
-### Hardware
+## Hardware
 
 * A 2018 (released on 2019/1) Macbook pro 13 inch ~~(but I really want to switch out)~~
 * An iPad air 4 (for note taking and drawing)
 * A Raspberry Pi 3 Model B+
 
-### Software
+## Software
 
 * Shell: `zsh` + `oh my zsh` + `p10k`
 * Editor: `vim` (somethings `vscode`)
@@ -18,13 +18,29 @@ public: "true"
 
 > Visit my dot file: [terminal-configs](https://github.com/ljcucc/terminal_configs){target="blank"}
 
-On my mac:
+### mac:
 
 * OS: macOS Monterey
 * Browser: Safari ~~(for better performance and battery life on mac)~~
 * Terminal: [`iTerm2`](https://iterm2.com/){target="blank"}
 
-On my Raspberry Pi:
+### iPad:
+
+> I trying to start develop on my iPad in 2022 June, since Apple software-lock iPads functionality, I'm searching methods to develop portable.
+
+* OS: iPadOS
+* Browser: There's no other choice on iPad since software-lock
+* Terminal: Multiple, depends on usage.
+
+Tools:
+
+* [Blink Shell](http://blink.sh) (self-build version): connect VSCode or mosh to Raspberry pi
+* Code Sandbox: for web playground
+* iSH Shell (App Store version): for no internet connection environment
+
+> find out more detail of [dev on iPad](./dev-on-ipad)
+
+### Raspberry Pi
 
 * OS: Raspbian (based on Debian)
 * Browser: [`surf`](https://surf.suckless.org){target="blank"}
