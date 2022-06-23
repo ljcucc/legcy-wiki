@@ -86,7 +86,7 @@ li{
 }
 
 h1, h2, h3{
-  font-size: 30px !important;
+  font-size: 26px !important;
   font-weight: normal;
   /* line-height: 90%; */
   margin-top: 100px !important;
@@ -100,6 +100,7 @@ h1, h2, h3{
 
 h2{
   /* margin-bottom: 100px !important; */
+  font-size: 35px !important;
 }
 
 h3{
