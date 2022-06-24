@@ -1,6 +1,6 @@
 ---
 title: Computer Algebra System (CAS) 
-public: "true"
+public: false
 ...
 
 > 這個頁面尚未完成編輯！
