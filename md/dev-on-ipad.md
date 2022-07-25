@@ -5,6 +5,9 @@ public: true
 
 In this wiki, I'll showing 2 methods to doing dev on iPad. mostly locally, because if dev remotely isn't the definition of "dev on iPad". 
 
+* [Terminals](#terminal)
+* [Blink Shell + iSH Shell](#blink-shell-ish-shell)
+
 iPad is a device of in Apple Ecosystem, and with that native power, iPad can be the most powerful tools. but since Apple trying to software-lock the functionality of iPad (there's conspiracy says that Apple trying to cut the function of iPad in-order for the sells of mac), we can said that "Life finds a way", and so dose developers. In this docs, I trying to collecting and trying any possiable methods to dev on iPad.
 
 > And also, this guide may works on iPhone. depending on apps compatibility and interfaces.
@@ -20,7 +23,7 @@ IN specific cases, you may need different tools:
 * Code Sandbox: Develop node.js apps and React Native Apps.
 * Swift Playground: Develop Swift only application on iPad (and pay for the "Developer" license in-order to share your app to friends or run it on your iPhone).
 
-# Terminal stuff
+# Terminals
 
 Frist, let introduce some terminal basic stuff to working on wonderful things.
 
