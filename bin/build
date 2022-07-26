@@ -1,0 +1,66 @@
+#!/bin/sh
+
+rm -rf ./docs/*
+
+write_toc () {
+  echo "writting $1"
+}
+
+put_toc () {
+  local file=$1
+  echo toc $file
+
+  echo | (python3 - << py_code
+import json
+metadata = """$(pandoc --template=/tmp/metadata.pandoc-tpl $file)"""
+metadata = json.loads(metadata)
+true="true"
+if ("public" in metadata and metadata["public"]):
+  title = metadata["title"]
+  filename = "$(basename $file)".replace(".md", "")
+  print(f'<li><a href=\"{filename}\">{title}</a></li>')
+
+py_code
+) >> /tmp/toc
+
+}
+
+init_toc () {
+  echo "" > /tmp/toc
+}
+
+generate_content () {
+  local file=$1
+  local filename=$(basename $file)
+  local output=./docs/${filename/.md/.html}
+  # flag=--toc
+  pandoc $file $flag -o $output --template=./src/template.html -f markdown+autolink_bare_uris+emoji
+  put_toc $file
+  echo processed $output
+}
+
+init_toc
+
+for file in ./md/*; do
+  generate_content $file
+  # filename=$(basename $file)
+  # output=./docs/${filename/.md/.html}
+  # pandoc $file $flag -o $output --template=./src/template.html -f markdown+autolink_bare_uris+emoji
+  # put_toc $file
+  # echo processed $output
+done
+
+cp ./src/index.html ./docs/
+
+#homePageTmp=$(cat ./docs/index.html)
+#${homePageTmp/\$toc\$/$(cat /tmp/toc)} > ./docs/index.html
+
+echo generated toc
+
+# echo $(python3 - << EOF
+# print("""$(cat ./docs/index.html)""".replace("\$toc\$","""$(./bin/generate_contents.sh)"""))
+# EOF
+# ) > ./docs/index.html
+
+cp -v ./src/style.css ./docs/
+cp  -rfv ./assets ./docs/
