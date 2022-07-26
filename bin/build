@@ -52,8 +52,9 @@ done
 
 cp ./src/index.html ./docs/
 
-#homePageTmp=$(cat ./docs/index.html)
-#${homePageTmp/\$toc\$/$(cat /tmp/toc)} > ./docs/index.html
+homePageTmp=$(cat ./docs/index.html)
+toc_content=$(cat /tmp/toc)
+echo "${homePageTmp/\$toc\$/$toc_content}" > ./docs/index.html
 
 echo generated toc
 
