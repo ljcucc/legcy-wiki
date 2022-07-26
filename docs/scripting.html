@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Scripting">
+
+  <meta property="og:site_name" content="wwwiki - ljcu.cc">
+  <meta property="og:title" content="Scripting" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" itemprop="image" content="./assets/default-header.png">
+  <meta property="og:type" content="website" />
+
+  <title>Scripting</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <div class="toc">
+      </div>
+
+  <div class="body">
+    <div class="topbar">
+      <a class="title" href="index.html">wwwiki - ljcu.cc</a>
+    </div>
+  
+    <div class="content">
+            <img class="header-img" src="assets/default-header.png" alt="default header" />
+      <h1 class="title">Scripting</h1>
+        
+  
+      <h3 id="work-smart-be-efficient">Work smart, be efficient</h3>
+      <p>This is the main concept of using scripting tools. Don’t do the
+      same thing over and over again, try to repeat, reconstruct, reuse
+      them.</p>
+      <h2 id="operate-computer-by-scripting">Operate computer by
+      scripting</h2>
+      <p>Operating computer can be many ways, but if you want to operate
+      smart, you should try some scripting:</p>
+      <ul>
+      <li>for operating and automating GUI and mac, you can try <a
+      href="/apple-script">Apple Script</a></li>
+      <li>for shells, learn more about here: <a
+      href="/bash-scripting">Shell Scripting</a></li>
+      </ul>
+      <h2 id="edit-by-scripting">Edit by scripting</h2>
+      <p>Not only you can power up your work flow by using scripting
+      languages, you can use <strong>vim</strong> to editing files by
+      scripting directly.</p>
+      <p>learn more about <a href="/vim">vim</a></p>
+      <hr/>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="創用 CC 授權條款" style="border-width:0;border-radius: 0px;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+    </div>
+  </div>
+    <!-- image display dialog -->
+  <dialog modal-mode="mega">
+    <form method="dialog">
+      <img id="disp-img" src="" alt="">
+      <button class="menu-button" value="cancel">
+        <i class="material-icons">close</i>
+      </button>
+    </form>
+  </dialog>
+  
+</body>
+<script>
+  window.addEventListener("load", e=>{
+    document.querySelectorAll("img").forEach(item => item.addEventListener("click", e => {
+      console.log();
+      let dialog = document.querySelector("dialog");
+      document.querySelector("#disp-img").setAttribute("src", e.srcElement.getAttribute("src"));
+      dialog.showModal();
+    }));
+  });
+</script>
+
+</html>

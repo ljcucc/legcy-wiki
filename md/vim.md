@@ -85,3 +85,13 @@ usage
 ```vim
 nnoremap {key} {command}
 ```
+
+# Scripting
+
+## Function
+
+```vimrc
+function FunctionName()
+  " your code here
+endfunction
+```

@@ -16,7 +16,7 @@ public: "true"
 * File Manager: `ranger`
 * Sketching: `processing 4`
 
-> Visit my dot file: [terminal-configs](https://github.com/ljcucc/terminal_configs){target="blank"}
+> Visit [my dot files](https://github.com/ljcucc/dotfiles){target="blank"}
 
 ### mac:
 
