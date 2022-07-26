@@ -1,1 +1,0 @@
-nodemon --watch "./src" --watch "./md" --exec "./bin/build.sh" -e html,css,md,py,png,jpg.git --ignore ./docs
