@@ -1,6 +1,6 @@
 ---
 title: Bash Scripting
-public: true
+public: false
 ...
 
 用 bash scripting 發揮你的最大效率
@@ -50,3 +50,12 @@ $ touch my_script.sh
 # 使用 vim 文字編輯器開啟
 $ vim my_script.sh
 ```
+
+### ZSH Shortcut
+
+* `Ctrl-A`: Jump to the start of the line
+* `Ctrl-E`: Jump to the end of the line
+* `Ctrl-F`: Jump forward one character
+* `Ctrl-B`: Jump backward one character
+* `Alt-F`: Jump forward one word1
+* `Alt-B`: Jump backward one word1
