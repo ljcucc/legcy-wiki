@@ -6,8 +6,17 @@
 brew install pandoc
 ```
 
-## Build website
+## Get started
+
+Just run:
 
 ```bash
-./build.sh
+bin/build
 ```
+
+file structure:
+
+* `docs`: public html files
+* `md`: markdown source files
+* `src`: templates
+* `bin`: build tool
