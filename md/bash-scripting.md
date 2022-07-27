@@ -53,9 +53,24 @@ $ vim my_script.sh
 
 ### ZSH Shortcut
 
+Cursor: 
+
 * `Ctrl-A`: Jump to the start of the line
 * `Ctrl-E`: Jump to the end of the line
 * `Ctrl-F`: Jump forward one character
 * `Ctrl-B`: Jump backward one character
 * `Alt-F`: Jump forward one word1
 * `Alt-B`: Jump backward one word1
+
+Cleaning:
+
+* `Ctrl-L`: Clear screen
+* `Ctrl-U`: Clear line of input
+* `Ctrl-K`: Clear all after cursor
+* `Ctrl-W`: Delete the word before curosr
+
+History:
+
+* `![keyword]`: Put last command about keyword to next command prompt and do nothing
+* `!!`: Put whatever the command it is, to the next command prompt and do nothing
+* `Ctrl-R`: Open history search
