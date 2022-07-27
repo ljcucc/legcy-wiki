@@ -1,3 +1,4 @@
 #!/bin/sh
 nodemon --watch "./src" --watch "./md" --exec "./bin/build" -e html,css,md,py,png,jpg.git --ignore ./docs &
-cd docs;http-server 8080
+( cd docs ; http-server -c-1 )
+
