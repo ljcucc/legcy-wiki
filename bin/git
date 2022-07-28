@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# to branch ( branch_name )
+tob() {
+    git checkout $1
+}
+
+case $1 in
+  backup )
+    tob unfinished; git push --force
+    tob publish; git push --force
+    tob main
+    ;;
+  go )
+    tob unfinished
+    ;;
+  pushf )
+    git push --force
+    ;;
+  commita )
+    git commit --amend
+    ;;
+  * )
+    echo "command not found: $1"
+    exit 1
+esac
