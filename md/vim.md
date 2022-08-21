@@ -47,7 +47,7 @@ Vim's key bind allows you to doing some combination, which is the most powerful 
 
 ```
 [c]hange + [i]n + [w]ord = ciw    which will replace all content in a word.
-[v]isual + [i]n + ["]    = ci"    which will selected all content in ".
+[v]isual + [i]n + ["]    = vi"    which will selected all content in ".
 [d]elete + [i]n + [(]    = di(    which will delete / cut all content in paren.
 ```
 
