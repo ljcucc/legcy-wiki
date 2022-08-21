@@ -13,8 +13,10 @@ public: "true"
 
 * Shell: `zsh` + `oh my zsh` + `p10k`
 * Editor: `vim` (sometimes `vscode`)
-* File Manager: `ranger`
+* File Manager: `nnn`
 * Sketching: `processing 4`
+* IRC: `weechat` or `Limechat` (on mac)
+* RSS: `NetNewsWired` (on mac & iOS)
 
 > Visit [my dot files](https://github.com/ljcucc/dotfiles){target="blank"}
 
