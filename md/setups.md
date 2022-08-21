@@ -12,7 +12,7 @@ public: "true"
 ## Software
 
 * Shell: `zsh` + `oh my zsh` + `p10k`
-* Editor: `vim` (somethings `vscode`)
+* Editor: `vim` (sometimes `vscode`)
 * File Manager: `ranger`
 * Sketching: `processing 4`
 
