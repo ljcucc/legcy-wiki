@@ -5,7 +5,8 @@ public: "true"
 
 ## Hardware
 
-* A 2018 (released on 2019/1) Macbook pro 13 inch ~~(but I really want to switch out)~~
+* ~~A 2018 (released on 2019/1) Macbook pro 13 inch (but I really want to switch out)~~ (finally switched to Apple Silicon)
+* A 2022 Macbook Air with M2 ( 16/512 ) 
 * An iPad air 4 (for note taking and drawing)
 * A Raspberry Pi 3 Model B+
 
@@ -23,7 +24,7 @@ public: "true"
 ### mac:
 
 * OS: macOS Monterey
-* Browser: Safari ~~(for better performance and battery life on mac)~~
+* Browser: Safari, Chrome
 * Terminal: [`iTerm2`](https://iterm2.com/){target="blank"}
 
 ### iPad:

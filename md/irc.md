@@ -5,6 +5,8 @@ public: true
 
 > this is my note of IRC
 
+> I found out that there are too few IRC resources on the Internet, so I decided to make a complete guide to introduce IRC.
+
 IRC, as known as internet relay chat. which is a kind of realtime web chat protocol.
 
 unlike discord, Telegram or WhatsApp, IRC only do what "protocol" do, transfer message and sort of things. IRC also have features, like channels (simluar to rooms in Telegram, and same as discord's channel), or modes (simular to discord roles), and DMs.
@@ -23,8 +25,8 @@ Some concept you need to know before get started:
 
 ### Accounts (username), nicknames, real names
 
-* Login to IRC server is password free but reqiured an account name (AKA username).
-* while username is your login user id, nickname is the id that you're using on IRC channels (like mentions, picking person, or so on...)
+* Login IRC without a password with **username** and **real name**.
+* nickname is the id that you're using on IRC channels (like mentions, picking person, or so on...)
 * nickname sometimes is not reservable, or sometimes reservable by anyone if without a registration.
 * if you want to register an nickname, you need to register with a password and an email (sometimes), which may need a verification if reqiured email address.
 * Sometimes, one username can have more then one nickname. but sometimes, one username only can have on nicknam, and sometime the username and the nickname must be the same.
@@ -45,6 +47,8 @@ the common way to keep chat message is cloud based IRC, which will keep the conn
 etc. IRCCloud (*paid*) , Convos (*selfhost*) , Weechat (*we will talk about it later*)
 
 ## TUI (Weechat)
+
+> TUI a.k.a. Terminal User Interface
 
 Weechat is the commonly seem application of IRC, weechat is an text-based or terminal based application, which also have some proxy and more awesome feature you can working on.
 
@@ -141,7 +145,9 @@ start a DM
 
 ## Web Clients and clients applications
 
-## Proxy Protocol
+## Weechat Proxy Protocol
+
+You can use weechat as an "server side", then connect weechat relay (server) with your client.
 
 1. Set password:
 
@@ -157,6 +163,8 @@ start a DM
 ```
 
 > for more infomation, view the [offical document]( https://weechat.org/files/doc/stable/weechat_user.en.html#relay_weechat_protocol)
+
+> npm package of Weechat protocol: https://www.npmjs.com/package/weechat
 
 # Protocol
 
